@@ -1,6 +1,6 @@
-import fetch from 'isomorphic-fetch'
-import path from 'path'
-import { createRemoteFileNode, createFilePath } from 'gatsby-source-filesystem'
+const fetch = require('isomorphic-fetch')
+const path = require('path')
+const { createRemoteFileNode, createFilePath } = require('gatsby-source-filesystem')
 
 async function turnProjectsIntoPages({ graphql, actions, reporter}) {
   const { createPage } = actions
