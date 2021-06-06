@@ -9,3 +9,35 @@ body {
 * {
   box-sizing: border-box;
 }
+
+.social-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 1rem;
+  @apply w-full lg:w-4/12;
+}
+
+@media (min-width: 1024px) {
+  .social-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.social-grid > a {
+  @apply text-center rounded-lg bg-gray-700 cursor-pointer transform transition ease-in-out duration-300 hover:-translate-y-2 hover:shadow-xl;
+  padding: 1rem;
+  display: grid;
+  place-items: center;
+}
+
+.social-grid > a::before {
+  content: '';
+  display: block;
+  padding-bottom: 100%;
+  grid-area: 1 / 1 / 2 / 2;
+}
+
+.social-grid > a div {
+  width: 100%;
+  grid-area: 1 / 1 / 2 / 2;
+}

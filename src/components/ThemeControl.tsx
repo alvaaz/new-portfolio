@@ -1,10 +1,15 @@
 import React from 'react'
 import { ThemeToggler } from 'gatsby-plugin-dark-mode'
 
+interface Props {
+  theme: string
+  toggleTheme: (theme: string) => void
+}
+
 function ThemeControl() {
   return (
     <ThemeToggler>
-      {({ toggleTheme, theme }: { toggleTheme: any; theme: any }) => {
+      {({ toggleTheme, theme }: Props) => {
         const isDarkMode = theme === 'dark'
         if (theme == null) {
           return null
