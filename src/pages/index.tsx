@@ -1,10 +1,9 @@
 import React from 'react'
 import { External } from '../components/icons'
-import { Button, SEO } from '../components'
-import { graphql, Link } from 'gatsby'
+import { Button, SEO, ListProjects, ListArticles } from '../components'
+import { graphql } from 'gatsby'
 import { GatsbyImage, getImage, IGatsbyImageData } from 'gatsby-plugin-image'
 import { ProjectsProps } from '../types'
-import { getIcons } from '../util'
 
 export default function index({ data }: { data: ProjectsProps }) {
   const videosNodes = data.videos.nodes
@@ -34,75 +33,17 @@ export default function index({ data }: { data: ProjectsProps }) {
 
   const postsGroups = [posts.slice(0, 3), posts.slice(3, 6)]
 
-  const projectsRender = projects.map((project) => {
-    const image = getImage(project.frontmatter.featuredImage)
-    const title = project.frontmatter.title || project.fields.slug
-    return (
-      <Link
-        to={`/portfolio${project.fields.slug}`}
-        className="mb-10 sm:mb-0 sm:w-4/12 cursor-pointer transform transition ease-in-out duration-300 hover:-translate-y-2 hover:shadow-xl rounded-2xl"
-        key={project.fields.slug}
-      >
-        <article className="bg-blue-700 p-8 sm:p-10 rounded-2xl">
-          <h5 className="font-semibold text-3xl sm:text-4xl text-white mb-4">
-            {title}
-          </h5>
-          <p className="text-white text-xl sm:text-2xl mb-8 sm:mb-12">
-            Mining case tracking software.
-          </p>
-          <GatsbyImage
-            image={image as IGatsbyImageData}
-            alt={project.frontmatter.title}
-          />
-        </article>
-      </Link>
-    )
-  })
-
-  const postsRender = postsGroups.map((posts, index) => {
-    return (
-      <div className="flex flex-col flex-1" key={index}>
-        {posts.map((post) => {
-          const title = post.frontmatter.title || post.fields.slug
-          return (
-            <Link
-              className="mb-2 cursor-pointer transform transition ease-in-out duration-300 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-2xl p-4"
-              to={`/blog${post.fields.slug}`}
-              itemProp="url"
-              key={post.fields.slug}
-              itemScope
-              itemType="http://schema.org/Article"
-            >
-              <article className="flex">
-                <figure className="h-0 mr-5 sm:mr-7 w-14 h-14 sm:w-20 sm:h-20">
-                  {getIcons(post.frontmatter.category)}
-                </figure>
-                <div>
-                  <h6 className="font-semibold text-xl sm:text-2xl mb-4 dark:text-white">
-                    {title}
-                  </h6>
-                  <p className="text-gray-400 text-base sm:text-xl">
-                    {post.frontmatter.date}
-                  </p>
-                </div>
-              </article>
-            </Link>
-          )
-        })}
-      </div>
-    )
-  })
-
   const videos = videosNodes.map((video) => {
     const image = getImage(video.image)
     return (
       <a
-        className="mb-8 sm:mb-0 sm:w-4/12 cursor-pointer transform hover:bg-gray-100 dark:hover:bg-gray-800 transition ease-in-out duration-300 rounded-2xl p-4"
+        className="mb-8 sm:mb-0 sm:w-4/12 cursor-pointer transform bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 transition ease-in-out duration-300 rounded-2xl p-4"
         key={video.snippet.resourceId.videoId}
         href={`https://www.youtube.com/watch?v=${video.snippet.resourceId.videoId}`}
       >
         <GatsbyImage
-          className="rounded-lg mb-4 w-full"
+          /* z-index 0 is required to apply border-radius https://stackoverflow.com/a/64885552 */
+          className="rounded-lg mb-4 w-full z-0"
           image={image as IGatsbyImageData}
           alt={video.snippet.title}
         />
@@ -145,7 +86,7 @@ export default function index({ data }: { data: ProjectsProps }) {
             <Button to="/portfolio">See all</Button>
           </div>
           <div className="flex flex-col sm:flex-row sm:space-x-8">
-            {projectsRender}
+            <ListProjects projects={projects} />
           </div>
         </section>
         <section className="mb-16 sm:mb-40">
@@ -172,7 +113,7 @@ export default function index({ data }: { data: ProjectsProps }) {
             <Button to="/blog">See all</Button>
           </div>
           <div className="flex flex-col sm:flex-row sm:space-x-8">
-            {postsRender}
+            <ListArticles postsGroups={postsGroups} />
           </div>
         </section>
       </main>
