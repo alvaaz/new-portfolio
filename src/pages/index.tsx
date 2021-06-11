@@ -14,7 +14,7 @@ export default function index({ data }: { data: ProjectsProps }) {
   if (projects.length === 0) {
     return (
       <p>
-        No blog posts found. Add markdown posts to "content/blog" (or the
+        No projects found. Add markdown posts to "content/blog" (or the
         directory you specified for the "gatsby-source-filesystem" plugin in
         gatsby-config.js).
       </p>
@@ -31,13 +31,16 @@ export default function index({ data }: { data: ProjectsProps }) {
     )
   }
 
-  const postsGroups = [posts.slice(0, 3), posts.slice(3, 6)]
+  const postsGroups = [
+    posts.filter((_, i) => !(i % 2)),
+    posts.filter((_, i) => i % 2),
+  ]
 
   const videos = videosNodes.map((video) => {
     const image = getImage(video.image)
     return (
       <a
-        className="mb-8 sm:mb-0 sm:w-4/12 cursor-pointer transform bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 transition ease-in-out duration-300 rounded-2xl p-4"
+        className="mb-8 lg:mb-0 lg:w-4/12 cursor-pointer transform bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 transition ease-in-out duration-300 rounded-2xl p-4"
         key={video.snippet.resourceId.videoId}
         href={`https://www.youtube.com/watch?v=${video.snippet.resourceId.videoId}`}
       >
@@ -85,7 +88,7 @@ export default function index({ data }: { data: ProjectsProps }) {
             </h4>
             <Button to="/portfolio">See all</Button>
           </div>
-          <div className="flex flex-col sm:flex-row sm:space-x-8">
+          <div className="flex flex-col lg:flex-row lg:space-x-8">
             <ListProjects projects={projects} />
           </div>
         </section>
@@ -103,7 +106,7 @@ export default function index({ data }: { data: ProjectsProps }) {
               <External className="ml-2" />
             </a>
           </div>
-          <div className="flex flex-col sm:flex-row sm:space-x-8">{videos}</div>
+          <div className="flex flex-col lg:flex-row lg:space-x-8">{videos}</div>
         </section>
         <section className="mb-16 sm:mb-40">
           <div className="flex justify-between items-center mb-8">
@@ -112,7 +115,7 @@ export default function index({ data }: { data: ProjectsProps }) {
             </h4>
             <Button to="/blog">See all</Button>
           </div>
-          <div className="flex flex-col sm:flex-row sm:space-x-8">
+          <div className="flex flex-col lg:flex-row lg:space-x-8">
             <ListArticles postsGroups={postsGroups} />
           </div>
         </section>
@@ -143,6 +146,7 @@ export const query = graphql`
     posts: allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
       limit: 6
+      filter: { fileAbsolutePath: { regex: "/content/blog/" } }
     ) {
       nodes {
         excerpt

@@ -2,6 +2,34 @@ import fetch from 'isomorphic-fetch'
 import path from 'path'
 import { createRemoteFileNode, createFilePath } from 'gatsby-source-filesystem'
 
+async function turnTopicsIntoPages({ graphql, actions }) {
+  const topicTemplate = path.resolve('./src/pages/blog.tsx')
+  const { data } = await graphql(`
+    query {
+      allMarkdownRemark(
+        filter: { fileAbsolutePath: { regex: "/content/blog/" } }
+      ) {
+        nodes {
+          frontmatter {
+            category
+          }
+        }
+      }
+    }
+  `)
+  const allTopics = data.allMarkdownRemark.nodes.map(v => v.frontmatter.category)
+  const uniqueTopics = [...new Set(allTopics)]
+  uniqueTopics.forEach((topic) => {
+    actions.createPage({
+      path: `tags/${topic}`,
+      component: topicTemplate,
+      context: {
+        topic: topic
+      }
+    })
+  })
+}
+
 async function turnProjectsIntoPages({ graphql, actions, reporter}) {
   const { createPage } = actions
 
@@ -198,6 +226,7 @@ export async function sourceNodes(params) {
 export async function createPages(params) {
   await Promise.all([
     turnPostsIntoPages(params),
-    turnProjectsIntoPages(params)
+    turnProjectsIntoPages(params),
+    turnTopicsIntoPages(params)
   ]);
 }

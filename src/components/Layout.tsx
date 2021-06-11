@@ -12,14 +12,14 @@ const Layout: FC = ({ children }) => {
             Álvaro
           </Link>
           <Link
-            activeClassName="bg-gray-800"
+            activeClassName="bg-gray-100 dark:bg-gray-800"
             className="mr-0 sm:mr-8 px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800 cursor-pointer rounded-lg transition ease-in-out duration-300 dark:text-white"
             to="/blog"
           >
             Blog
           </Link>
           <Link
-            activeClassName="bg-gray-800"
+            activeClassName="bg-gray-100 dark:bg-gray-800"
             className="mr-0 sm:mr-8 px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800 cursor-pointer rounded-lg transition ease-in-out duration-300 dark:text-white"
             to="/portfolio"
           >
