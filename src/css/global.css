@@ -12,9 +12,15 @@ body {
 
 .social-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-gap: 1rem;
   @apply w-full lg:w-4/12;
+}
+
+@media (min-width: 640px) {
+  .social-grid {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
 }
 
 @media (min-width: 1024px) {
