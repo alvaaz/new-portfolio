@@ -25,7 +25,7 @@ const Layout: FC = ({ children }) => {
           >
             Portafolio
           </Link>
-          <ThemeControl />
+          {/* <ThemeControl /> */}
         </nav>
         {children}
       </div>

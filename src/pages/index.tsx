@@ -72,13 +72,13 @@ export default function index({ data }: { data: ProjectsProps }) {
         </p>
         <div className="flex flex-wrap">
           <a
-            className="px-6 py-3 sm:py-4 border-2 border-transparent bg-black dark:bg-white text-white dark:text-black rounded-lg mr-6 text-base sm:text-lg md:text-xl lg:text-2xl hover:bg-gray-800 transition ease-in-out duration-300 mb-4 sm:mb-0"
+            className="px-6 py-3 sm:py-4 border-1 sm:border-2 border-transparent bg-black dark:bg-white text-white dark:text-black rounded-lg mr-6 text-base sm:text-lg md:text-xl lg:text-2xl hover:bg-gray-800 transition ease-in-out duration-300 mb-4 sm:mb-0"
             href="google.cl"
           >
             Download Resumé
           </a>
           <a
-            className="px-6 py-3 sm:py-4 border-2 border-black dark:border-white dark:text-white rounded-lg text-base sm:text-lg md:text-xl lg:text-2xl hover:bg-gray-100 dark:hover:bg-gray-900 transition ease-in-out duration-300"
+            className="px-6 py-3 sm:py-4 border-1 sm:border-2 border-black dark:border-white dark:text-white rounded-lg text-base sm:text-lg md:text-xl lg:text-2xl hover:bg-gray-100 dark:hover:bg-gray-900 transition ease-in-out duration-300"
             href="google.cl"
           >
             Youtube Channel
@@ -87,7 +87,7 @@ export default function index({ data }: { data: ProjectsProps }) {
       </div>
       <main>
         <section className="mb-16 sm:mb-40">
-          <div className="flex justify-between items-center mb-8">
+          <div className="flex justify-between items-center mb-8 lg:mb-12">
             <h4 className="text-2xl sm:text-3xl md:text-4xl font-medium dark:text-white mb-0">
               Featured projects
             </h4>
@@ -98,7 +98,7 @@ export default function index({ data }: { data: ProjectsProps }) {
           </div>
         </section>
         <section className="mb-16 sm:mb-40">
-          <div className="flex justify-between items-center mb-8">
+          <div className="flex justify-between items-center mb-8 lg:mb-12">
             <h4 className="text-2xl sm:text-3xl md:text-4xl font-medium dark:text-white mb-0">
               Lastest videos
             </h4>
@@ -114,7 +114,7 @@ export default function index({ data }: { data: ProjectsProps }) {
           <div className="flex flex-col lg:flex-row lg:space-x-8">{videos}</div>
         </section>
         <section className="mb-16 sm:mb-40">
-          <div className="flex justify-between items-center mb-8">
+          <div className="flex justify-between items-center mb-8 lg:mb-12">
             <h4 className="text-2xl sm:text-3xl md:text-4xl font-medium dark:text-white mb-0">
               Lastest articles
             </h4>
