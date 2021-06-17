@@ -65,14 +65,14 @@ export default function index({ data }: { data: ProjectsProps }) {
     <>
       <SEO title="👋" />
       <div className="hero mb-32 sm:mb-48">
-        <p className="mb-16 leading-normal text-3xl sm:text-4xl md:text-5xl lg:text-6xl sm:leading-snug md:leading-normal lg:leading-relaxed dark:text-white">
+        <p className="mb-12 sm:mb-16 leading-normal text-3xl sm:text-4xl md:text-5xl lg:text-6xl sm:leading-snug md:leading-normal lg:leading-relaxed dark:text-white">
           <span className="font-semibold">Digital Product Designer</span> <br />
           &<span className="font-semibold"> Frontend Engineer</span>
           <br /> from Viña del mar, Chile
         </p>
-        <div className="flex">
+        <div className="flex flex-wrap">
           <a
-            className="px-6 py-3 sm:py-4 border-2 border-transparent bg-black dark:bg-white text-white dark:text-black rounded-lg mr-6 text-base sm:text-lg md:text-xl lg:text-2xl hover:bg-gray-800 transition ease-in-out duration-300"
+            className="px-6 py-3 sm:py-4 border-2 border-transparent bg-black dark:bg-white text-white dark:text-black rounded-lg mr-6 text-base sm:text-lg md:text-xl lg:text-2xl hover:bg-gray-800 transition ease-in-out duration-300 mb-4 sm:mb-0"
             href="google.cl"
           >
             Download Resumé
@@ -88,7 +88,7 @@ export default function index({ data }: { data: ProjectsProps }) {
       <main>
         <section className="mb-16 sm:mb-40">
           <div className="flex justify-between items-center mb-8">
-            <h4 className="text-2xl sm:text-3xl md:text-4xl font-medium dark:text-white">
+            <h4 className="text-2xl sm:text-3xl md:text-4xl font-medium dark:text-white mb-0">
               Featured projects
             </h4>
             <Button to="/portfolio">See all</Button>
@@ -99,7 +99,7 @@ export default function index({ data }: { data: ProjectsProps }) {
         </section>
         <section className="mb-16 sm:mb-40">
           <div className="flex justify-between items-center mb-8">
-            <h4 className="text-2xl sm:text-3xl md:text-4xl font-medium dark:text-white">
+            <h4 className="text-2xl sm:text-3xl md:text-4xl font-medium dark:text-white mb-0">
               Lastest videos
             </h4>
             <a
@@ -115,7 +115,7 @@ export default function index({ data }: { data: ProjectsProps }) {
         </section>
         <section className="mb-16 sm:mb-40">
           <div className="flex justify-between items-center mb-8">
-            <h4 className="text-2xl sm:text-3xl md:text-4xl font-medium dark:text-white">
+            <h4 className="text-2xl sm:text-3xl md:text-4xl font-medium dark:text-white mb-0">
               Lastest articles
             </h4>
             <Button to="/blog">See all</Button>
