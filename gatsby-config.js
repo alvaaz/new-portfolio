@@ -43,20 +43,7 @@ module.exports = {
         name: `portfolio`,
       },
     },
-    {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        plugins: [
-          `gatsby-remark-images-grid`,
-          {
-            resolve: `gatsby-remark-images`,
-            options: {
-              maxWidth: 590,
-            },
-          }
-        ],
-      },
-    },
+    `gatsby-transformer-remark`,
     `gatsby-plugin-image`,
     {
       resolve: `gatsby-plugin-google-analytics`,

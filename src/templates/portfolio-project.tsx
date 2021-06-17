@@ -20,25 +20,27 @@ const PortfolioProjectTemplate = ({ data }: { data: SingleProjectProps }) => {
           project.frontmatter.description || project.frontmatter.excerpt
         }
       />
-      <header className="grid grid-cols-12 gap-x-8 mb-32">
-        <h2 className="text-4xl md:text-6xl font-bold col-start-1 col-end-9 lg:col-start-2 mb-12 dark:text-white">
-          {project.frontmatter.title}
-        </h2>
+      <header className="grid grid-cols-12 gap-x-8 mb-16 lg:mb-32">
+        <div className="flex justify-between items-center col-span-full lg:col-start-2 lg:col-end-12 mb-12">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold dark:text-white mb-0">
+            {project.frontmatter.title}
+          </h2>
+          <a
+            href="https://www.youtube.com/channel/UCvMg7whAhSHpoL04E96fe5Q"
+            target="_blank"
+            className="text-xl sm:text-2xl font-medium text-blue-600 dark:text-blue-500 px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800 cursor-pointer rounded-lg transition ease-in-out duration-300 flex items-center"
+          >
+            Visit live
+            <External className="ml-2" />
+          </a>
+        </div>
         <GatsbyImage
           className="col-span-full lg:col-start-2 lg:col-end-12 mb-12"
           image={image1 as IGatsbyImageData}
           alt=""
         />
-        <p className="col-span-full lg:col-start-2 lg:col-end-9 mb-0 mt-0 text-gray-500 dark:text-gray-400 text-2xl lg:text-3xl font-semibold leading-snug">
+        <p className="col-span-full lg:col-start-2 lg:col-end-9 mb-12 lg:mb-0 mt-0 text-gray-500 dark:text-gray-400 text-2xl lg:text-3xl font-semibold leading-snug">
           {project.frontmatter.excerpt}
-          <a
-            href="https://labs.jumpitt.com"
-            target="_blank"
-            className="mt-16 text-xl sm:text-2xl font-medium text-blue-600 dark:text-blue-500 dark:hover:bg-gray-900 cursor-pointer rounded-lg transition ease-in-out duration-300 flex items-center"
-          >
-            Ir al sitio
-            <External className="ml-2" />
-          </a>
         </p>
 
         <div className="col-span-full lg:col-start-9 lg:col-end-12 font-semibold">
@@ -70,7 +72,7 @@ const PortfolioProjectTemplate = ({ data }: { data: SingleProjectProps }) => {
           alt=""
         />
 
-        <h6 className="col-span-full lg:col-start-2 lg:col-end-9 text-2xl font-semibold mb-8 dark:text-white">
+        <h6 className="col-span-full lg:col-start-2 lg:col-end-9 sm:text-lg md:text-xl lg:text-2xl font-semibold mb-8 dark:text-white">
           Desafío
         </h6>
         <p className="col-span-full lg:col-start-2 lg:col-end-9 mb-12 text-2xl lg:text-3xl text-gray-500 dark:text-gray-400 font-semibold leading-snug">
@@ -81,7 +83,7 @@ const PortfolioProjectTemplate = ({ data }: { data: SingleProjectProps }) => {
           image={image4 as IGatsbyImageData}
           alt=""
         />
-        <h6 className="col-span-full lg:col-start-2 lg:col-end-9 text-2xl font-semibold mb-8 dark:text-white">
+        <h6 className="col-span-full lg:col-start-2 lg:col-end-9 sm:text-lg md:text-xl lg:text-2xl font-semibold mb-8 dark:text-white">
           Proceso
         </h6>
         <p className="col-span-full lg:col-start-2 lg:col-end-9 text-2xl lg:text-3xl text-gray-500 dark:text-gray-400 font-semibold mb-12 leading-snug">

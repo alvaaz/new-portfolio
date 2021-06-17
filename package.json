@@ -8,7 +8,6 @@
     "url": "https://github.com/alvaaz"
   },
   "dependencies": {
-    "@pauliescanlon/gatsby-remark-grid-system": "^0.0.4",
     "gatsby": "^3.7.0",
     "gatsby-image": "^3.5.0",
     "gatsby-plugin-dark-mode": "^1.1.2",
@@ -21,7 +20,6 @@
     "gatsby-plugin-react-helmet": "^4.5.0",
     "gatsby-plugin-sharp": "^3.5.0",
     "gatsby-remark-images": "^5.2.1",
-    "gatsby-remark-images-grid": "^1.1.2",
     "gatsby-source-filesystem": "^3.5.0",
     "gatsby-transformer-remark": "^4.2.0",
     "gatsby-transformer-sharp": "^3.5.0",
