@@ -178,6 +178,8 @@ export const query = graphql`
           slug
         }
         frontmatter {
+          excerpt
+          color
           title
           featuredImage {
             childImageSharp {

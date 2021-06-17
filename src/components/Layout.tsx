@@ -8,7 +8,7 @@ const Layout: FC = ({ children }) => {
     <div className="bg-white dark:bg-gray-900">
       <div className="container mx-auto px-4 sm:px-8 mb-16">
         <nav className="flex justify-between mb-8 sm:mb-0 py-8 sm:py-16 text-xl sm:text-2xl items-center">
-          <Link className="font-semibold dark:text-white flex-1" to="/">
+          <Link className="font-semibold dark:text-white mr-auto" to="/">
             Álvaro
           </Link>
           <Link
@@ -25,7 +25,7 @@ const Layout: FC = ({ children }) => {
           >
             Portafolio
           </Link>
-          {/* <ThemeControl /> */}
+          <ThemeControl />
         </nav>
         {children}
       </div>

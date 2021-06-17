@@ -40,7 +40,7 @@ const PortfolioProjectTemplate = ({ data }: { data: SingleProjectProps }) => {
           alt=""
         />
         <p className="col-span-full lg:col-start-2 lg:col-end-9 mb-12 lg:mb-0 mt-0 text-gray-500 dark:text-gray-400 text-2xl lg:text-3xl font-semibold leading-snug">
-          {project.frontmatter.excerpt}
+          {project.frontmatter.content1}
         </p>
 
         <div className="col-span-full lg:col-start-9 lg:col-end-12 font-semibold">
@@ -76,7 +76,7 @@ const PortfolioProjectTemplate = ({ data }: { data: SingleProjectProps }) => {
           Desafío
         </h6>
         <p className="col-span-full lg:col-start-2 lg:col-end-9 mb-12 text-2xl lg:text-3xl text-gray-500 dark:text-gray-400 font-semibold leading-snug">
-          {project.frontmatter.content1}
+          {project.frontmatter.content2}
         </p>
         <GatsbyImage
           className="col-span-full lg:col-start-2 lg:col-end-12 mb-24"
@@ -87,7 +87,7 @@ const PortfolioProjectTemplate = ({ data }: { data: SingleProjectProps }) => {
           Proceso
         </h6>
         <p className="col-span-full lg:col-start-2 lg:col-end-9 text-2xl lg:text-3xl text-gray-500 dark:text-gray-400 font-semibold mb-12 leading-snug">
-          {project.frontmatter.content2}
+          {project.frontmatter.content3}
         </p>
         <GatsbyImage
           className="col-span-full lg:col-start-2 lg:col-end-12 mb-24"
@@ -152,6 +152,7 @@ export const pageQuery = graphql`
             gatsbyImageData(layout: CONSTRAINED)
           }
         }
+        content4
       }
     }
     previous: markdownRemark(
