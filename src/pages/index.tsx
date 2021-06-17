@@ -83,18 +83,18 @@ export default function index({ data }: { data: ProjectsProps }) {
       <main>
         <section className="mb-16 sm:mb-40">
           <div className="flex justify-between items-center mb-8">
-            <h4 className="text-2xl sm:text-4xl font-medium dark:text-white">
+            <h4 className="text-2xl sm:text-3xl md:text-4xl font-medium dark:text-white">
               Featured projects
             </h4>
             <Button to="/portfolio">See all</Button>
           </div>
-          <div className="flex flex-col lg:flex-row lg:space-x-8">
+          <div className="flex flex-col lg:flex-row lg:space-x-8 items-start">
             <ListProjects projects={projects} />
           </div>
         </section>
         <section className="mb-16 sm:mb-40">
           <div className="flex justify-between items-center mb-8">
-            <h4 className="text-2xl sm:text-4xl font-medium dark:text-white">
+            <h4 className="text-2xl sm:text-3xl md:text-4xl font-medium dark:text-white">
               Lastest videos
             </h4>
             <a
@@ -110,7 +110,7 @@ export default function index({ data }: { data: ProjectsProps }) {
         </section>
         <section className="mb-16 sm:mb-40">
           <div className="flex justify-between items-center mb-8">
-            <h4 className="text-2xl sm:text-4xl font-medium dark:text-white">
+            <h4 className="text-2xl sm:text-3xl md:text-4xl font-medium dark:text-white">
               Lastest articles
             </h4>
             <Button to="/blog">See all</Button>

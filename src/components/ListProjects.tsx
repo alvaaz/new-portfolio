@@ -12,15 +12,15 @@ export function ListProjects({ projects }: { projects: ProjectProps }) {
         return (
           <Link
             to={`/portfolio${project.fields.slug}`}
-            className="mb-10 lg:mb-0 lg:w-4/12 cursor-pointer transform transition ease-in-out duration-300 hover:-translate-y-2 hover:shadow-xl rounded-2xl"
+            className="mb-10 lg:mb-0 lg:w-4/12 cursor-pointer transform transition ease-in-out duration-300 hover:-translate-y-2 hover:shadow-xl rounded-2xl bg-blue-700"
             key={project.fields.slug}
           >
-            <article className="bg-blue-700 p-8 sm:p-10 rounded-2xl flex flex-col md:flex-row lg:flex-col">
+            <article className="p-8 sm:p-10 rounded-2xl flex flex-col md:flex-row lg:flex-col">
               <div>
-                <h5 className="font-semibold text-3xl sm:text-4xl text-white mb-4">
+                <h5 className="font-semibold text-xl sm:text-3xl md:text-4xl text-white mb-4">
                   {title}
                 </h5>
-                <p className="text-white text-xl sm:text-2xl mb-8 sm:mb-12">
+                <p className="text-white text-lg sm:text-xl md:text-2xl mb-8 sm:mb-12">
                   Mining case tracking software.
                 </p>
               </div>
