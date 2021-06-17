@@ -4,7 +4,6 @@ import { graphql } from 'gatsby'
 import { SEO } from '../components'
 import { getImage, GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image'
 import { SingleProjectProps } from '../types'
-import { Link } from 'gatsby'
 
 const PortfolioProjectTemplate = ({ data }: { data: SingleProjectProps }) => {
   const project = data.markdownRemark
@@ -22,15 +21,15 @@ const PortfolioProjectTemplate = ({ data }: { data: SingleProjectProps }) => {
         }
       />
       <header className="grid grid-cols-12 gap-x-8 mb-32">
-        <h2 className="text-6xl font-bold col-start-2 col-end-9 mb-12 dark:text-white">
+        <h2 className="text-4xl md:text-6xl font-bold col-start-1 col-end-9 lg:col-start-2 mb-12 dark:text-white">
           {project.frontmatter.title}
         </h2>
         <GatsbyImage
-          className="col-start-2 col-end-12 mb-12"
+          className="col-span-full lg:col-start-2 lg:col-end-12 mb-12"
           image={image1 as IGatsbyImageData}
           alt=""
         />
-        <p className="col-start-2 col-end-10 mb-0 mt-0 text-gray-500 dark:text-gray-400 text-3xl font-semibold">
+        <p className="col-span-full lg:col-start-2 lg:col-end-9 mb-0 mt-0 text-gray-500 dark:text-gray-400 text-2xl lg:text-3xl font-semibold leading-snug">
           {project.frontmatter.excerpt}
           <a
             href="https://labs.jumpitt.com"
@@ -42,14 +41,14 @@ const PortfolioProjectTemplate = ({ data }: { data: SingleProjectProps }) => {
           </a>
         </p>
 
-        <div className="col-start-10 col-end-12 font-semibold">
+        <div className="col-span-full lg:col-start-9 lg:col-end-12 font-semibold">
           <p className="text-xl mb-2 text-black dark:text-white">Rol</p>
           {/* prettier-ignore */}
-          <p className="text-xl mb-0 mt-0 text-gray-500 dark:text-gray-400">{project.frontmatter.role}</p>
+          <p className="text-xl mb-0 mt-0 text-gray-500 dark:text-gray-400 mb-4">{project.frontmatter.role}</p>
           <p className="text-xl mb-2 text-black dark:text-white">
             Colaboradores
           </p>
-          <ul className="text-xl text-gray-500 dark:text-gray-400">
+          <ul className="text-xl text-gray-500 dark:text-gray-400 mb-4">
             {project.frontmatter.contributors.map((contributor) => (
               <li>— {contributor}</li>
             ))}
@@ -62,50 +61,38 @@ const PortfolioProjectTemplate = ({ data }: { data: SingleProjectProps }) => {
       <main className="grid grid-cols-12 gap-x-8">
         <GatsbyImage
           image={image2 as IGatsbyImageData}
-          className="col-start-2 col-end-7 mb-20"
+          className="col-span-full lg:col-start-2 lg:col-end-7 mb-20"
           alt=""
         />
         <GatsbyImage
-          className="col-start-7 col-end-12 mb-20"
+          className="col-span-full lg:col-start-7 lg:col-end-12 mb-20"
           image={image3 as IGatsbyImageData}
           alt=""
         />
 
-        <h6 className="col-start-2 col-end-9 text-2xl font-semibold mb-8 dark:text-white">
+        <h6 className="col-span-full lg:col-start-2 lg:col-end-9 text-2xl font-semibold mb-8 dark:text-white">
           Desafío
         </h6>
-        <p
-          className="col-start-2 col-end-9 mb-12 text-gray-500 dark:text-gray-400 font-semibold"
-          style={{ fontSize: '32px' }}
-        >
+        <p className="col-span-full lg:col-start-2 lg:col-end-9 mb-12 text-2xl lg:text-3xl text-gray-500 dark:text-gray-400 font-semibold leading-snug">
           {project.frontmatter.content1}
         </p>
         <GatsbyImage
-          className="col-start-2 col-end-12 mb-24"
+          className="col-span-full lg:col-start-2 lg:col-end-12 mb-24"
           image={image4 as IGatsbyImageData}
           alt=""
         />
-        <h6 className="col-start-2 col-end-9 text-2xl font-semibold mb-8 dark:text-white">
+        <h6 className="col-span-full lg:col-start-2 lg:col-end-9 text-2xl font-semibold mb-8 dark:text-white">
           Proceso
         </h6>
-        <p
-          className="col-start-2 col-end-9 text-gray-500 dark:text-gray-400 font-semibold mb-12"
-          style={{ fontSize: '32px' }}
-        >
+        <p className="col-span-full lg:col-start-2 lg:col-end-9 text-2xl lg:text-3xl text-gray-500 dark:text-gray-400 font-semibold mb-12 leading-snug">
           {project.frontmatter.content2}
         </p>
         <GatsbyImage
-          className="col-start-2 col-end-12 mb-24"
+          className="col-span-full lg:col-start-2 lg:col-end-12 mb-24"
           image={image5 as IGatsbyImageData}
           alt=""
         />
       </main>
-      <div>
-        <Link to={`/portfolio${data.next.fields.slug}`}>
-          <p>Next project</p>
-          <h6>{data.next.frontmatter.title}</h6>
-        </Link>
-      </div>
     </>
   )
 }

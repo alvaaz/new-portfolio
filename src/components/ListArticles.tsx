@@ -28,7 +28,7 @@ export function ListArticles({ postsGroups }: { postsGroups: PostsProps[] }) {
                       <h6 className="font-semibold text-xl sm:text-2xl mb-4 dark:text-white">
                         {title}
                       </h6>
-                      <p className="text-gray-400 text-base sm:text-xl">
+                      <p className="text-gray-400 text-base sm:text-xl mb-0">
                         {post.frontmatter.date}
                       </p>
                     </div>

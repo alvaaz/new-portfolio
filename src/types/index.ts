@@ -39,9 +39,11 @@ export type ProjectProps = {
   fields: {
     slug: string
   }
+  id?: string,
   frontmatter: {
     title: string
     featuredImage: IGatsbyImageData
+    excerpt?: string
   }
 }[];
 

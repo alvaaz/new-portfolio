@@ -1,6 +1,6 @@
 import React from 'react'
 import { ListArticles, SEO } from '../components'
-import { graphql, Link } from 'gatsby'
+import { graphql, Link, useScrollRestoration } from 'gatsby'
 import { PostsProps } from '../types'
 import { Chevron } from '../components/icons'
 
@@ -24,6 +24,10 @@ const Blog = ({
     topic: string
   }
 }) => {
+  const ulScrollRestoration = useScrollRestoration(`page-component-ul-list`)
+
+  console.log(ulScrollRestoration.ref.current)
+
   const nodes = data.allMarkdownRemark.nodes
 
   const allTopics = data.tags.nodes.map((v) => v.frontmatter.category)
@@ -109,12 +113,13 @@ const Blog = ({
         className="mb-12 relative border-b-2 border-gray-300 dark:border-gray-700"
         style={{ height: '2.79rem' }}
       >
+        {/* @ts-ignore: Unreachable code error */}
         <ul
-          ref={tabsContainerRef}
           className="flex text-2xl items-stretch overflow-x-auto overflow-y-hidden pb-20"
           style={{
             WebkitOverflowScrolling: 'touch',
           }}
+          {...ulScrollRestoration}
         >
           <li>
             <Link
@@ -140,7 +145,7 @@ const Blog = ({
         <div className="block sm:hidden">
           <button
             ref={buttonLeftRef}
-            className="absolute top-0 left-0 w-8 bg-white border-r border-gray-300 h-full flex items-center justify-center hidden"
+            className="absolute top-0 left-0 w-8 bg-white dark:bg-gray-900 border-r border-gray-300 h-full flex items-center justify-center hidden backdrop-blur-sm"
             style={{ outline: 0 }}
           >
             <Chevron
@@ -151,7 +156,7 @@ const Blog = ({
           </button>
           <button
             ref={buttonRightRef}
-            className="absolute top-0 right-0 w-8 bg-white border-l border-gray-300 h-full flex items-center justify-center"
+            className="absolute top-0 right-0 w-8 bg-white dark:bg-gray-900 border-l border-gray-300 h-full flex items-center justify-center backdrop-blur-sm opacity-80"
             style={{ outline: 0 }}
           >
             <Chevron size="middle" color="#2997FF" className="w-5 h-5" />

@@ -39,7 +39,7 @@ const Footer = () => {
           <a href={github} target="_blank" className="">
             <div>
               <Github className="mx-auto mb-0 sm:mb-4 w-8 sm:w-full" />
-              <p className="text-white">Github</p>
+              <p className="text-white mb-0">Github</p>
             </div>
           </a>
           <a
@@ -49,19 +49,19 @@ const Footer = () => {
           >
             <div>
               <Twitter className="mx-auto mb-0 sm:mb-4 w-8 sm:w-full" />
-              <p className="text-white">Twitter</p>
+              <p className="text-white mb-0">Twitter</p>
             </div>
           </a>
           <a href={`mailto:${email}`} target="_blank" className="">
             <div>
               <Email className="mx-auto mb-0 sm:mb-4 w-8 sm:w-full" />
-              <p className="text-white">Email</p>
+              <p className="text-white mb-0">Email</p>
             </div>
           </a>
           <a href={youtube} target="_blank" className="">
             <div>
               <Youtube className="mx-auto mb-0 sm:mb-4 w-8 sm:w-full" />
-              <p className="text-white">Youtube</p>
+              <p className="text-white mb-0">Youtube</p>
             </div>
           </a>
         </div>

@@ -54,7 +54,7 @@ export default function index({ data }: { data: ProjectsProps }) {
         <h6 className="font-semibold text-xl sm:text-2xl mb-4 dark:text-white">
           {video.snippet.title}
         </h6>
-        <p className="text-gray-400 text-base sm:text-xl">
+        <p className="text-gray-400 text-base sm:text-xl mb-0">
           {video.snippet.publishedAt}
         </p>
       </a>

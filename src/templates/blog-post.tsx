@@ -23,6 +23,7 @@ const BlogPostTemplate = ({ data }: { data: Props }) => {
         description={post.frontmatter.description || post.excerpt}
       />
       <section
+        className="w-full sm:w-8/12 mx-auto"
         dangerouslySetInnerHTML={{ __html: post.html }}
         itemProp="articleBody"
       />
