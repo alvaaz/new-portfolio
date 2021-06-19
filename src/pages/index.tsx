@@ -2,7 +2,12 @@ import React from 'react'
 import { External } from '../components/icons'
 import { Button, SEO, ListProjects, ListArticles } from '../components'
 import { graphql } from 'gatsby'
-import { GatsbyImage, getImage, IGatsbyImageData } from 'gatsby-plugin-image'
+import {
+  GatsbyImage,
+  getImage,
+  IGatsbyImageData,
+  StaticImage,
+} from 'gatsby-plugin-image'
 import { ProjectsProps } from '../types'
 
 export default function index({ data }: { data: ProjectsProps }) {
@@ -65,21 +70,33 @@ export default function index({ data }: { data: ProjectsProps }) {
     <>
       <SEO title="👋" />
       <div className="hero mb-32 sm:mb-48">
-        <p className="mb-12 sm:mb-16 leading-normal text-3xl sm:text-4xl md:text-5xl lg:text-6xl sm:leading-snug md:leading-normal lg:leading-relaxed dark:text-white">
-          <span className="font-semibold">Digital Product Designer</span> <br />
-          &<span className="font-semibold"> Frontend Engineer</span>
-          <br /> from Viña del mar, Chile
-        </p>
-        <div className="flex flex-wrap">
+        <div className="flex justify-between flex-col lg:flex-row">
+          <p className="mb-12 sm:mb-16 leading-normal text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl sm:leading-snug md:leading-normal lg:leading-relaxed xl:leading-relaxed dark:text-white">
+            <span className="font-semibold">Digital Product Designer</span>{' '}
+            <br />&<span className="font-semibold"> Frontend Engineer</span>
+            <br /> from Viña del mar, Chile
+          </p>
+          <StaticImage
+            className="order-first lg:order-none w-48 h-48 mb-8 lg:mb-0 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-80 lg:h-80 xl:w-auto xl:h-auto"
+            src="./../../static/alvaro.png"
+            alt="Álvaro Goede"
+            placeholder="blurred"
+            width={407}
+            height={406}
+          />
+        </div>
+        <div className="flex flex-wrap items-start">
           <a
-            className="px-6 py-3 sm:py-4 border-1 sm:border-2 border-transparent bg-black dark:bg-white text-white dark:text-black rounded-lg mr-6 text-base sm:text-lg md:text-xl lg:text-2xl hover:bg-gray-800 transition ease-in-out duration-300 mb-4 sm:mb-0"
-            href="google.cl"
+            className="px-6 py-3 sm:py-4 border sm:border-2 border-transparent bg-black dark:bg-white text-white dark:text-black rounded-lg mr-6 text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl hover:bg-gray-800 transition ease-in-out duration-300 mb-4 sm:mb-0"
+            target="_blank"
+            href={'/resume.pdf'}
           >
             Download Resumé
           </a>
           <a
-            className="px-6 py-3 sm:py-4 border-1 sm:border-2 border-black dark:border-white dark:text-white rounded-lg text-base sm:text-lg md:text-xl lg:text-2xl hover:bg-gray-100 dark:hover:bg-gray-900 transition ease-in-out duration-300"
-            href="google.cl"
+            className="px-6 py-3 sm:py-4 border sm:border-2 border-black dark:border-white dark:text-white rounded-lg text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl hover:bg-gray-100 dark:hover:bg-gray-900 transition ease-in-out duration-300"
+            href="https://www.youtube.com/channel/UCvMg7whAhSHpoL04E96fe5Q"
+            target="_blank"
           >
             Youtube Channel
           </a>

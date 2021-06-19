@@ -44,6 +44,7 @@ export type ProjectProps = {
     title: string
     featuredImage: IGatsbyImageData
     excerpt?: string
+    color?: string
   }
 }[];
 

@@ -2,22 +2,33 @@ import React from 'react'
 import { SEO } from '../components'
 import { graphql, Link } from 'gatsby'
 import { ProjectProps } from '../types'
+import { GatsbyImage, getImage, IGatsbyImageData } from 'gatsby-plugin-image'
 
 const Blog = ({ data }: { data: { projects: { nodes: ProjectProps } } }) => {
-  const projects = data.projects.nodes.map((project) => (
-    <Link
-      to={`/portfolio${project.fields.slug}`}
-      className="cursor-pointer transform transition ease-in-out duration-300 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-2xl p-10 text-xl sm:text-2xl col-span-full sm:col-span-4"
-      key={project.fields.slug}
-    >
-      <article className="" key={project.id}>
-        <h6 className="text-yellow-600 dark:text-yellow-600 mb-4 font-medium">
-          {project.frontmatter.title}
-        </h6>
-        <p className="dark:text-white">{project.frontmatter.excerpt}</p>
-      </article>
-    </Link>
-  ))
+  const projects = data.projects.nodes.map((project) => {
+    const image = getImage(project.frontmatter.featuredImage)
+    const title = project.frontmatter.title || project.fields.slug
+
+    return (
+      <Link
+        to={`/portfolio${project.fields.slug}`}
+        className="cursor-pointer transform transition ease-in-out duration-300 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-2xl p-10 text-xl sm:text-2xl col-span-full sm:col-span-4"
+        key={project.fields.slug}
+      >
+        <article className="" key={project.id}>
+          <h6 className="text-yellow-600 dark:text-yellow-600 mb-4 font-medium">
+            {project.frontmatter.title}
+          </h6>
+          <p className="dark:text-white">{project.frontmatter.excerpt}</p>
+          <GatsbyImage
+            className="sm:w-1/2 lg:w-auto"
+            image={image as IGatsbyImageData}
+            alt={title}
+          />
+        </article>
+      </Link>
+    )
+  })
 
   return (
     <>
