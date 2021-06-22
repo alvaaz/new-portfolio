@@ -22,7 +22,7 @@ const PortfolioProjectTemplate = ({ data }: { data: SingleProjectProps }) => {
       />
       <header className="grid grid-cols-12 gap-x-8 mb-16 lg:mb-32">
         <div className="flex justify-between items-center col-span-full lg:col-start-2 lg:col-end-12 mb-12">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold dark:text-white mb-0">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold dark:text-white mb-0">
             {project.frontmatter.title}
           </h2>
           <a

@@ -28,11 +28,11 @@ const Footer = () => {
     <footer className="bg-gray-800 py-16">
       <div className="container mx-auto flex lg:items-center flex-col lg:flex-row px-4 sm:px-8 justify-start">
         <div className="flex-1 mb-8 lg:mb-0">
-          <h2 className="text-3xl font-semibold md:text-4xl text-white mb-4">
-            Let work together
+          <h2 className="font-semibold text-2xl lg:text-3xl xl:text-4xl text-white mb-4">
+            ¿Puedo ayudarte con algo?
           </h2>
           <p className="text-xl md:text-2xl text-white mb-4">
-            Can I help you with anything? Do get in touch...
+            Sigamos en contacto
           </p>
         </div>
         <div className="text-xl social-grid">

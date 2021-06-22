@@ -19,7 +19,7 @@ export function ListProjects({ projects }: { projects: ProjectProps }) {
           >
             <article className="p-8 sm:p-10 rounded-2xl flex flex-col sm:flex-row lg:flex-col md:space-x-4">
               <div>
-                <h5 className="font-semibold text-xl sm:text-2xl md:text-3xl lg:text-4xl text-white mb-4">
+                <h5 className="font-semibold text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl text-white mb-4">
                   {title}
                 </h5>
                 <p className="text-white text-lg sm:text-xl md:text-2xl mb-8 sm:mb-12">
