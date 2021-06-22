@@ -42,7 +42,7 @@ const Blog = ({
             : `All articles`
         }
       />
-      <h4 className="text-3xl sm:text-4xl font-medium mb-20 text-blue-500">
+      <h4 className="text-3xl sm:text-4xl font-medium mb-20 text-blue-500 dark:text-blue-500">
         Blog
       </h4>
       <div
