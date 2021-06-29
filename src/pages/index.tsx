@@ -77,7 +77,8 @@ export default function index({ data }: { data: ProjectsProps }) {
             <br /> viviendo en Viña del mar, Chile
           </p>
           <StaticImage
-            className="order-first lg:order-none w-48 h-48 mb-8 lg:mb-0 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-80 lg:h-80 xl:w-auto xl:h-auto"
+            className="order-first lg:order-none mb-8 lg:mb-0 w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-80 lg:h-80 xl:w-auto xl:h-auto"
+            imgClassName="rounded-lg overflow-hidden"
             src="./../../static/alvaro.png"
             alt="Álvaro Goede"
             placeholder="blurred"
