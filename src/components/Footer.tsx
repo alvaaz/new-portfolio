@@ -29,10 +29,10 @@ const Footer = () => {
       <div className="container mx-auto flex lg:items-center flex-col lg:flex-row px-4 sm:px-8 justify-start">
         <div className="flex-1 mb-8 lg:mb-0">
           <h2 className="font-semibold text-2xl lg:text-3xl xl:text-4xl text-white mb-4">
-            ¿Puedo ayudarte con algo?
+            Sigamos en contacto
           </h2>
           <p className="text-xl md:text-2xl text-white mb-4">
-            Sigamos en contacto
+            Puedes encontrarme por acá 👉
           </p>
         </div>
         <div className="text-xl social-grid">

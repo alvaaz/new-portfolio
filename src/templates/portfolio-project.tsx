@@ -6,33 +6,34 @@ import { getImage, GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image'
 import { SingleProjectProps } from '../types'
 
 const PortfolioProjectTemplate = ({ data }: { data: SingleProjectProps }) => {
-  const project = data.markdownRemark
-  const image1 = getImage(project.frontmatter.image1)
-  const image2 = getImage(project.frontmatter.image2)
-  const image3 = getImage(project.frontmatter.image3)
-  const image4 = getImage(project.frontmatter.image4)
-  const image5 = getImage(project.frontmatter.image5)
+  const project = data.markdownRemark.frontmatter
+  const image1 = getImage(project.image1)
+  const image2 = getImage(project.image2)
+  const image3 = getImage(project.image3)
+  const image4 = getImage(project.image4)
+  const image5 = getImage(project.image5)
+  console.log(project)
   return (
     <>
       <SEO
-        title={project.frontmatter.title}
-        description={
-          project.frontmatter.description || project.frontmatter.excerpt
-        }
+        title={project.title}
+        description={project.description || project.excerpt}
       />
       <header className="grid grid-cols-12 gap-x-8 mb-16 lg:mb-32">
         <div className="flex justify-between items-center col-span-full lg:col-start-2 lg:col-end-12 mb-12">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold dark:text-white mb-0">
-            {project.frontmatter.title}
+            {project.title}
           </h2>
-          <a
-            href="https://www.youtube.com/channel/UCvMg7whAhSHpoL04E96fe5Q"
-            target="_blank"
-            className="text-xl sm:text-2xl font-medium text-blue-600 dark:text-blue-500 px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800 cursor-pointer rounded-lg transition ease-in-out duration-300 flex items-center"
-          >
-            Visit live
-            <External className="ml-2" />
-          </a>
+          {project.link && (
+            <a
+              href={project.link}
+              target="_blank"
+              className="text-xl sm:text-2xl font-medium text-blue-600 dark:text-blue-500 px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800 cursor-pointer rounded-lg transition ease-in-out duration-300 flex items-center"
+            >
+              Visitar sitio
+              <External className="ml-2" />
+            </a>
+          )}
         </div>
         <GatsbyImage
           className="col-span-full lg:col-start-2 lg:col-end-12 mb-12"
@@ -40,24 +41,24 @@ const PortfolioProjectTemplate = ({ data }: { data: SingleProjectProps }) => {
           alt=""
         />
         <p className="col-span-full lg:col-start-2 lg:col-end-9 mb-12 lg:mb-0 mt-0 text-gray-500 dark:text-gray-400 text-2xl lg:text-3xl font-semibold leading-snug">
-          {project.frontmatter.content1}
+          {project.content1}
         </p>
 
         <div className="col-span-full lg:col-start-9 lg:col-end-12 font-semibold">
           <p className="text-xl mb-2 text-black dark:text-white">Rol</p>
           {/* prettier-ignore */}
-          <p className="text-xl mb-0 mt-0 text-gray-500 dark:text-gray-400 mb-4">{project.frontmatter.role}</p>
+          <p className="text-xl mb-0 mt-0 text-gray-500 dark:text-gray-400 mb-4">{project.role}</p>
           <p className="text-xl mb-2 text-black dark:text-white">
             Colaboradores
           </p>
           <ul className="text-xl text-gray-500 dark:text-gray-400 mb-4">
-            {project.frontmatter.contributors.map((contributor) => (
-              <li>— {contributor}</li>
+            {project.contributors.map((contributor, index) => (
+              <li key={index}>— {contributor}</li>
             ))}
           </ul>
           <p className="text-xl mb-2 text-black dark:text-white">Año</p>
           {/* prettier-ignore */}
-          <p className="text-xl text-gray-500 dark:text-gray-400 mt-0">{project.frontmatter.year}</p>
+          <p className="text-xl text-gray-500 dark:text-gray-400 mt-0">{project.year}</p>
         </div>
       </header>
       <main className="grid grid-cols-12 gap-x-8">
@@ -76,7 +77,7 @@ const PortfolioProjectTemplate = ({ data }: { data: SingleProjectProps }) => {
           Desafío
         </h6>
         <p className="col-span-full lg:col-start-2 lg:col-end-9 mb-12 text-2xl lg:text-3xl text-gray-500 dark:text-gray-400 font-semibold leading-snug">
-          {project.frontmatter.content2}
+          {project.content2}
         </p>
         <GatsbyImage
           className="col-span-full lg:col-start-2 lg:col-end-12 mb-24"
@@ -87,7 +88,7 @@ const PortfolioProjectTemplate = ({ data }: { data: SingleProjectProps }) => {
           Proceso
         </h6>
         <p className="col-span-full lg:col-start-2 lg:col-end-9 text-2xl lg:text-3xl text-gray-500 dark:text-gray-400 font-semibold mb-12 leading-snug">
-          {project.frontmatter.content3}
+          {project.content3}
         </p>
         <GatsbyImage
           className="col-span-full lg:col-start-2 lg:col-end-12 mb-24"
@@ -117,6 +118,7 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
+        link
         role
         year
         excerpt

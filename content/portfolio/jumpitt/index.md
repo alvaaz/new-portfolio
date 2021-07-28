@@ -1,5 +1,6 @@
 ---
 title: Jumpitt
+link: 'https://www.jumpitt.com'
 date: '2020-07-27T07:26:03.284Z'
 color: 'bg-black'
 excerpt: 'Este es un texto de muestra'

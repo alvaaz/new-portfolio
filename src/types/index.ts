@@ -12,6 +12,7 @@ export type SingleProjectProps = {
   markdownRemark: {
     frontmatter: {
       title: string
+      link: null | string
       description: string
       contributors: string[]
       role: string

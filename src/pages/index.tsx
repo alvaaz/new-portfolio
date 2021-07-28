@@ -72,8 +72,11 @@ export default function index({ data }: { data: ProjectsProps }) {
       <div className="hero mb-32 sm:mb-48">
         <div className="flex justify-between flex-col lg:flex-row">
           <p className="mb-12 sm:mb-16 leading-normal text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl sm:leading-snug md:leading-normal lg:leading-relaxed xl:leading-relaxed dark:text-white">
-            <span className="font-semibold">Diseñador de productos digitales</span>{' '}
-            <br />y<span className="font-semibold"> desarrollador frontend</span>
+            <span className="font-semibold">
+              Diseñador de productos digitales
+            </span>{' '}
+            <br />y
+            <span className="font-semibold"> desarrollador frontend</span>
             <br /> viviendo en Viña del mar, Chile
           </p>
           <StaticImage
@@ -123,10 +126,10 @@ export default function index({ data }: { data: ProjectsProps }) {
             <a
               href="https://www.youtube.com/channel/UCvMg7whAhSHpoL04E96fe5Q"
               target="_blank"
-              className="text-xl sm:text-2xl font-medium text-blue-600 dark:text-blue-500 px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800 cursor-pointer rounded-lg transition ease-in-out duration-300 flex items-center"
+              className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-medium text-blue-600 dark:text-blue-500 px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800 cursor-pointer rounded-lg transition ease-in-out duration-300 flex items-center"
             >
               Ver todo
-              <External className="ml-2" />
+              <External className="ml-1 w-4 h-4 lg:w-5 lg:h-5 xl:w-6 xl:h-6" />
             </a>
           </div>
           <div className="flex flex-col lg:flex-row lg:space-x-8">{videos}</div>
