@@ -1,6 +1,6 @@
 import React from 'react'
 import { External } from '../components/icons'
-import { Button, SEO, ListProjects, ListArticles } from '../components'
+import { Button, SEO, ListProjects } from '../components'
 import { graphql } from 'gatsby'
 import {
   GatsbyImage,
@@ -13,33 +13,11 @@ import { ProjectsProps } from '../types'
 export default function index({ data }: { data: ProjectsProps }) {
   const videosNodes = data.videos.nodes
 
-  const posts = data.posts.nodes
   const projects = data.projects.nodes
 
   if (projects.length === 0) {
-    return (
-      <p>
-        No projects found. Add markdown posts to "content/blog" (or the
-        directory you specified for the "gatsby-source-filesystem" plugin in
-        gatsby-config.js).
-      </p>
-    )
+    return <p>No existen proyectos 🤕.</p>
   }
-
-  if (posts.length === 0) {
-    return (
-      <p>
-        No blog posts found. Add markdown posts to "content/blog" (or the
-        directory you specified for the "gatsby-source-filesystem" plugin in
-        gatsby-config.js).
-      </p>
-    )
-  }
-
-  const postsGroups = [
-    posts.filter((_, i) => !(i % 2)),
-    posts.filter((_, i) => i % 2),
-  ]
 
   const videos = videosNodes.map((video) => {
     const image = getImage(video.image)
@@ -134,17 +112,6 @@ export default function index({ data }: { data: ProjectsProps }) {
           </div>
           <div className="flex flex-col lg:flex-row lg:space-x-8">{videos}</div>
         </section>
-        <section className="mb-16 sm:mb-40">
-          <div className="flex justify-between items-center mb-8 lg:mb-12">
-            <h4 className="text-2xl sm:text-3xl md:text-4xl font-medium dark:text-white mb-0">
-              Últimos artículos
-            </h4>
-            <Button to="/blog">Ver todos</Button>
-          </div>
-          <div className="flex flex-col lg:flex-row lg:space-x-8">
-            <ListArticles postsGroups={postsGroups} />
-          </div>
-        </section>
       </main>
     </>
   )
@@ -165,25 +132,6 @@ export const query = graphql`
           childImageSharp {
             gatsbyImageData(height: 226, placeholder: BLURRED, quality: 100)
           }
-        }
-      }
-    }
-
-    posts: allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC }
-      limit: 6
-      filter: { fileAbsolutePath: { regex: "/content/blog/" } }
-    ) {
-      nodes {
-        excerpt
-        fields {
-          slug
-        }
-        frontmatter {
-          date(fromNow: true, locale: "es-ES")
-          title
-          description
-          category
         }
       }
     }
