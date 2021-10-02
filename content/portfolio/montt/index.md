@@ -2,7 +2,7 @@
 title: Montt
 date: '2020-07-27T07:26:03.284Z'
 color: 'bg-blue-700'
-excerpt: 'Este es un texto de muestra'
+excerpt: 'CaseTracking para buffet de abogados Montt & Cia.'
 content1: 'El seguimiento de causas mineras es un proceso legal que contempla muchas etapas. El cliente requería una plataforma que le permitiera dar seguimiento y documentar el proceso, con la finalidad de focalizar sus recursos de mejor manera.'
 featuredImage: featuredImage.png
 role: Product Designer

@@ -3,7 +3,7 @@ title: Jumpitt
 link: 'https://www.jumpitt.com'
 date: '2020-07-27T07:26:03.284Z'
 color: 'bg-black'
-excerpt: 'Este es un texto de muestra'
+excerpt: 'Desarrollo de sitio web en NextJs y GraphQL'
 content1: 'Re-hacer el sitio web de Jumpitt para mejorar performance y agregarle la funcionalidad de ser administrado por cualquier persona del equipo.'
 featuredImage: featuredImage.png
 role: Fullstack Developer
