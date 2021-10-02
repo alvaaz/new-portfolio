@@ -119,7 +119,7 @@ export default function index({ data }: { data: ProjectsProps }) {
 
 export const query = graphql`
   query ProjectQuery {
-    videos: allVideo {
+    videos: allVideo(sort: { fields: snippet___publishedAt, order: DESC }) {
       nodes {
         snippet {
           title
