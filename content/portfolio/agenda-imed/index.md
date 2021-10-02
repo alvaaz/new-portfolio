@@ -1,8 +1,8 @@
 ---
-title: Agenda I-Med
+title: Agenda Imed
 date: '2020-07-27T07:26:03.284Z'
 color: 'bg-green-600'
-excerpt: 'Este es un texto de muestra'
+excerpt: 'Desarrollo de agenda médica para Imed'
 content1: 'Creación de una plataforma de control para proveedores de salud que incluía el manejo de call centers, centros médicos, doctores y agendamiento.'
 featuredImage: featuredImage.png
 role: Product Designer

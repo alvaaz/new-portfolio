@@ -38,9 +38,8 @@ const Blog = ({ data }: { data: { projects: { nodes: ProjectProps } } }) => {
           Portfolio
         </h4>
         <p className="text-xl sm:text-3x font-semibold dark:text-white sm:w-8/12">
-          With Visual Look Up, you can quickly learn more about art, landmarks,
-          nature, books, and pets simply by tapping a photo on your device or on
-          the web.
+          Aquí encontrarás algunos de los proyectos de diseño en los que he
+          trabajado. Si buscas proyectos de código, puedes visitar mi Github.
         </p>
       </div>
       <section className="grid grid-cols-8 sm:grid-cols-12 gap-8 items-start">
