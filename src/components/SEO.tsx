@@ -41,11 +41,20 @@ export const SEO = ({
       }}
       title={title}
       titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : undefined}
-
       meta={[
         {
+          name: `theme-color`,
+          content: '#ffffff',
+          media: '(prefers-color-scheme: light)',
+        },
+        {
+          name: `theme-color`,
+          content: '#111827',
+          media: '(prefers-color-scheme: dark)',
+        },
+        {
           name: `viewport`,
-          content: "width=device-width, initial-scale=1, viewport-fit=cover"
+          content: 'width=device-width, initial-scale=1, viewport-fit=cover',
         },
         {
           name: `description`,
@@ -80,8 +89,6 @@ export const SEO = ({
           content: metaDescription,
         },
       ].concat(meta)}
-
-
     />
   )
 }
