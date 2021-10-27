@@ -1,0 +1,16 @@
+{
+  "redirects": [
+    {
+      "source": "/youtube",
+      "destination": "https://www.youtube.com/channel/UCvMg7whAhSHpoL04E96fe5Q?sub_confirmation=1"
+    },
+    {
+      "source": "/instagram",
+      "destination": "https://www.instagram.com/alvaaz/"
+    },
+    {
+      "source": "/twitter",
+      "destination": "https://www.twitter.com/alvaaz/"
+    }
+  ]
+}

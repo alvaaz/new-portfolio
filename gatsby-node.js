@@ -111,7 +111,6 @@ async function fetchVideosAndTurnIntoNodes({ actions, createContentDigest }) {
     `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=PLUweiC3IeIEoaer4XlQAl8alwcGCqdHce&maxResults=4&key=${process.env.YOUTUBE_KEY}`
   )
   const { items } = await res.json()
-  console.log(items)
   for (const item of items) {
     const nodeMeta = {
       id: item.id,
