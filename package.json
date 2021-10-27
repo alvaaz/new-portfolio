@@ -8,6 +8,7 @@
     "url": "https://github.com/alvaaz"
   },
   "dependencies": {
+    "cross-env": "^7.0.3",
     "gatsby": "^3.14.1",
     "gatsby-image": "^3.11.0",
     "gatsby-plugin-dark-mode": "^1.1.2",
@@ -57,10 +58,10 @@
     "url": "git+https://github.com/alvaaz"
   },
   "scripts": {
+    "build": "cross-env NODE_OPTIONS=\"-r esm\" gatsby build",
+    "develop": "cross-env NODE_OPTIONS=\"-r esm\" gatsby develop",
     "start": "npm run develop",
-    "develop": "NODE_OPTIONS=\"-r esm\" gatsby develop",
-    "build": "NODE_OPTIONS=\"-r esm\" gatsby build",
-    "serve": "NODE_OPTIONS=\"-r esm\" gatsby serve",
+    "serve": "cross-env NODE_OPTIONS=\"-r esm\" gatsby serve",
     "format": "prettier --write \"**/*.{js,jsx,json,md,ts,tsx}\"",
     "type-check": "tsc --noEmit",
     "lint": "eslint . --ext ts,tsx"
