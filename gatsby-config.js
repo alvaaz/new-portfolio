@@ -52,7 +52,6 @@ module.exports = {
         short_name: `alvaaz`,
         start_url: `/`,
         background_color: `#ffffff`,
-        theme_color: `#663399`,
         display: `minimal-ui`,
         icon: `content/assets/goede-icon.png`,
       },
