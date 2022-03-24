@@ -11,6 +11,10 @@
     {
       "source": "/twitter",
       "destination": "https://www.twitter.com/alvaaz/"
+    },
+     {
+      "source": "/linkedin",
+      "destination": "https://www.linkedin.com/in/alvarogoede/"
     }
   ]
 }
