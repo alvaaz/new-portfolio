@@ -1,17 +1,46 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { External } from '../components/icons'
 import { Button, SEO, ListProjects } from '../components'
 import { graphql } from 'gatsby'
-import {
-  GatsbyImage,
-  getImage,
-  IGatsbyImageData,
-  StaticImage,
-} from 'gatsby-plugin-image'
+
+import TimeAgo from 'react-timeago'
+// @ts-ignore
+import spanishStrings from '../../node_modules/react-timeago/lib/language-strings/es'
+// @ts-ignore
+import buildFormatter from '../../node_modules/react-timeago/lib/formatters/buildFormatter'
+
+import { StaticImage } from 'gatsby-plugin-image'
 import { ProjectsProps } from '../types'
 
 export default function index({ data }: { data: ProjectsProps }) {
-  const videosNodes = data.videos.nodes
+  const formatter = buildFormatter(spanishStrings)
+  const [dataVideos, setDataVideos] = useState<{
+    items: [
+      {
+        snippet: {
+          title: string
+          publishedAt: string
+          resourceId: { videoId: string }
+          thumbnails: {
+            standard: {
+              url: string
+            }
+          }
+        }
+      }
+    ]
+  } | null>(null)
+
+  useEffect(() => {
+    fetch(
+      `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=PLUweiC3IeIEoaer4XlQAl8alwcGCqdHce&maxResults=4&key=${process.env.GATSBY_YOUTUBE_KEY}`
+    )
+      .then((response) => response.json())
+      .then((resultData) => {
+        console.log(resultData)
+        setDataVideos(resultData)
+      })
+  }, [])
 
   const projects = data.projects.nodes
 
@@ -19,27 +48,28 @@ export default function index({ data }: { data: ProjectsProps }) {
     return <p>No existen proyectos 🤕.</p>
   }
 
-  const videos = videosNodes.map((video) => {
-    const image = getImage(video.image)
+  const videosRender = dataVideos?.items.map((video) => {
     return (
       <a
         className="mb-8 lg:mb-0 lg:w-4/12 cursor-pointer transform bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 transition ease-in-out duration-300 rounded-2xl p-4"
         key={video.snippet.resourceId.videoId}
         href={`https://www.youtube.com/watch?v=${video.snippet.resourceId.videoId}`}
       >
-        <GatsbyImage
+        <img
           /* z-index 0 is required to apply border-radius https://stackoverflow.com/a/64885552 */
           className="rounded-lg mb-4 w-full z-0"
-          image={image as IGatsbyImageData}
+          src={video.snippet.thumbnails.standard.url}
           alt={video.snippet.title}
         />
-
         <h6 className="font-semibold text-xl sm:text-2xl mb-4 dark:text-white">
           {video.snippet.title}
         </h6>
-        <p className="text-gray-400 text-base sm:text-xl mb-0">
-          {video.snippet.publishedAt}
-        </p>
+
+        <TimeAgo
+          className="text-gray-400 text-base sm:text-xl mb-0"
+          date={video.snippet.publishedAt}
+          formatter={formatter}
+        />
       </a>
     )
   })
@@ -110,7 +140,9 @@ export default function index({ data }: { data: ProjectsProps }) {
               <External className="ml-1 w-4 h-4 lg:w-5 lg:h-5 xl:w-6 xl:h-6" />
             </a>
           </div>
-          <div className="flex flex-col lg:flex-row lg:space-x-8">{videos}</div>
+          <div className="flex flex-col lg:flex-row lg:space-x-8">
+            {videosRender}
+          </div>
         </section>
       </main>
     </>
@@ -119,23 +151,6 @@ export default function index({ data }: { data: ProjectsProps }) {
 
 export const query = graphql`
   query ProjectQuery {
-    videos: allVideo(sort: { fields: snippet___publishedAt, order: DESC }) {
-      nodes {
-        snippet {
-          title
-          publishedAt(fromNow: true, locale: "es-ES")
-          resourceId {
-            videoId
-          }
-        }
-        image {
-          childImageSharp {
-            gatsbyImageData(height: 226, placeholder: BLURRED, quality: 100)
-          }
-        }
-      }
-    }
-
     projects: allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
       limit: 1000
