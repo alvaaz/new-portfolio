@@ -2,6 +2,7 @@ module.exports = {
   purge: {
     content: ['./src/**/*.ts', './src/**/*.tsx'],
     safelist: [
+      'bg-blue-600',
       'bg-blue-700',
       'bg-green-600',
     ]
