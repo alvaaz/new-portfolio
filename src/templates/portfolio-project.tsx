@@ -12,7 +12,6 @@ const PortfolioProjectTemplate = ({ data }: { data: SingleProjectProps }) => {
   const image3 = getImage(project.image3)
   const image4 = getImage(project.image4)
   const image5 = getImage(project.image5)
-  console.log(project)
   return (
     <>
       <SEO
@@ -74,7 +73,7 @@ const PortfolioProjectTemplate = ({ data }: { data: SingleProjectProps }) => {
         />
 
         <h6 className="col-span-full lg:col-start-2 lg:col-end-9 sm:text-lg md:text-xl lg:text-2xl font-semibold mb-8 dark:text-white">
-          Desafío
+          {project.title1}
         </h6>
         <p className="col-span-full lg:col-start-2 lg:col-end-9 mb-12 text-2xl lg:text-3xl text-gray-500 dark:text-gray-400 font-semibold leading-snug">
           {project.content2}

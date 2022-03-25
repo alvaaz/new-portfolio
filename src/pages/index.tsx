@@ -153,7 +153,7 @@ export const query = graphql`
   query ProjectQuery {
     projects: allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
-      limit: 1000
+      limit: 3
       filter: { fileAbsolutePath: { regex: "/content/portfolio/" } }
     ) {
       nodes {
