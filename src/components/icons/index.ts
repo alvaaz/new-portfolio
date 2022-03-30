@@ -6,3 +6,4 @@ export * from './email';
 export * from './github';
 export * from './sun';
 export * from './moon';
+export * from './repository';
