@@ -29,7 +29,7 @@ const PortfolioProjectTemplate = ({ data }: { data: SingleProjectProps }) => {
               target="_blank"
               className="text-xl sm:text-2xl font-medium text-blue-600 dark:text-blue-500 px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800 cursor-pointer rounded-lg transition ease-in-out duration-300 flex items-center"
             >
-              Visitar sitio
+              Visit site
               <Icon name="external" className="ml-2" />
             </a>
           )}
