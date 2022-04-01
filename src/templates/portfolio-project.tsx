@@ -88,7 +88,7 @@ const PortfolioProjectTemplate = ({ data }: { data: SingleProjectProps }) => {
           alt=""
         />
         <h6 className="col-span-full lg:col-start-2 lg:col-end-9 sm:text-lg md:text-xl lg:text-2xl font-semibold mb-8 dark:text-white">
-          Proceso
+          {project.title2}
         </h6>
         <p className="col-span-full lg:col-start-2 lg:col-end-9 text-2xl lg:text-3xl text-gray-500 dark:text-gray-400 font-semibold mb-12 leading-snug">
           {project.content3}
