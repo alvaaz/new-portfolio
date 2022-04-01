@@ -1,6 +1,6 @@
 import React from 'react'
 
-export function Moon({ props }: { props?: { className?: string } }) {
+export default function Moon(props: any) {
   return (
     <svg
       width="24"

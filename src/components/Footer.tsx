@@ -1,8 +1,8 @@
 import React from 'react'
-import { Github, Twitter, Email, Youtube } from './icons'
+import Icon from './icons'
 import { useStaticQuery, graphql } from 'gatsby'
 
-const Footer = () => {
+function Footer() {
   const data = useStaticQuery(graphql`
     query BioQuery {
       site {
@@ -16,54 +16,48 @@ const Footer = () => {
             github
             youtube
             email
+            linkedin
           }
         }
       }
     }
   `)
 
-  const { email, twitter, github, youtube } = data.site.siteMetadata.social
-
   return (
     <footer className="bg-gray-800 py-16">
       <div className="container mx-auto flex lg:items-center flex-col lg:flex-row px-4 sm:px-8 justify-start">
-        <div className="flex-1 mb-8 lg:mb-0">
+        <div className="grow mb-8 lg:mb-0">
           <h2 className="font-semibold text-2xl lg:text-3xl xl:text-4xl text-white mb-4">
-            Sigamos en contacto
+            Let's keep in touch
           </h2>
           <p className="text-xl md:text-2xl text-white mb-4">
-            Puedes encontrarme por acá 👉
+            You can find me over on{' '}
+            <span className="hidden lg:inline"> 👉</span>
+            <span className="inline lg:hidden"> 👇</span>
           </p>
         </div>
-        <div className="text-xl social-grid">
-          <a href={github} target="_blank" className="">
-            <div>
-              <Github className="mx-auto mb-0 sm:mb-4 w-8 sm:w-full" />
-              <p className="text-white mb-0">Github</p>
-            </div>
-          </a>
-          <a
-            href={`https://twitter.com/${twitter}`}
-            target="_blank"
-            className=""
-          >
-            <div>
-              <Twitter className="mx-auto mb-0 sm:mb-4 w-8 sm:w-full" />
-              <p className="text-white mb-0">Twitter</p>
-            </div>
-          </a>
-          <a href={`mailto:${email}`} target="_blank" className="">
-            <div>
-              <Email className="mx-auto mb-0 sm:mb-4 w-8 sm:w-full" />
-              <p className="text-white mb-0">Email</p>
-            </div>
-          </a>
-          <a href={youtube} target="_blank" className="">
-            <div>
-              <Youtube className="mx-auto mb-0 sm:mb-4 w-8 sm:w-full" />
-              <p className="text-white mb-0">Youtube</p>
-            </div>
-          </a>
+        <div className="grow text-xl flex gap-4 flex-wrap">
+          {Object.keys(data.site.siteMetadata.social).map((key) => {
+            const url = data.site.siteMetadata.social[key]
+            if (!url) return null
+            return (
+              <a
+                className="basis-32 grow text-center rounded-lg bg-gray-700 cursor-pointer transform transition ease-in-out duration-300 hover:-translate-y-2 hover:shadow-xl p-4"
+                key={key}
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div>
+                  <Icon
+                    name={key}
+                    className="mx-auto mb-0 sm:mb-4 w-8 sm:w-full"
+                  />
+                  <p className="text-white mb-0 capitalize">{key}</p>
+                </div>
+              </a>
+            )
+          })}
         </div>
       </div>
     </footer>

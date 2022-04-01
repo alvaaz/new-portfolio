@@ -3,8 +3,8 @@ title: Supercartola
 link: 'https://supercartola.cl/'
 date: '2021-02-01T07:26:03.284Z'
 color: 'bg-blue-600'
-excerpt: 'Desarrollo de UI Kit y diseño de vistas'
-content1: 'Supercartola es la manera más fácil de conciliar tus cuentas. Revisa diaramente tus movimientos de una manera confiable y en un cartola unificada de todos tus bancos. Puedes filtrar todos tus movimientos en las cuentas que agregues para hacer tus finanzas más simples.'
+excerpt: 'UI kit development and UI design'
+content1: 'Supercartola is the easiest way to reconcile your accounts. Check your daily transactions in a reliable way and a unified card of all your banks. You can filter all your transactions in the accounts you add to make your finances simpler.'
 featuredImage: featuredImage.png
 role: UI Designer
 contributors: []
@@ -12,9 +12,9 @@ year: 2021
 image1: image1.png
 image2: image2.png
 title1: 'UI Kit'
-content2: 'Como un inicio del proyecto desarrollé un pequeño kit de diseño que me permita mantener una consistencia visual en todas las vistas de la aplicación. Contempló las foundations, tipografía y colores para todos los componentes que se utilizarían.'
-title2: 'Proceso'
-content3: 'Trabajé junto al equipo de desarrollo de Platanus conociendo las funcionalidades y los requerimientos del producto. Propuse soluciones a problemas complejos como el manejo de multiples filtros y personalización de vistas cuidando la experiencia del usuario. Diseñe e implemente en las vistas todo el flujo del usuario, desde la visualización de datos hasta la configuración de su cuenta.'
+content2: 'As a start of the project, I developed a small design kit that would allow me to maintain visual consistency in all views of the application. It contemplated the foundations, typography, and colors for all the components that would be used.'
+title2: 'Process'
+content3: 'I worked with the Platanus development team getting to know the functionalities and requirements of the product. I proposed solutions to complex problems such as handling multiple filters and customization of views while taking care of the user experience. I designed and implemented in the views all the user flow, from data visualization to account configuration.'
 image3: image3.png
 image4: image5.png
 image5: image4.png

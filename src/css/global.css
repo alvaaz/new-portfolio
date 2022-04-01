@@ -30,44 +30,87 @@ body {
     @apply dark:text-white;
   }
   p {
-    @apply dark:text-white text-lg mb-8;
+    @apply text-lg mb-8;
   }
 }
 
-.social-grid {
+@keyframes levels {
+  0% {
+    background-color: #ebedf0;
+  }
+  33% {
+    background-color: #216e39;
+  }
+  66% {
+    background-color: #9be9a8;
+  }
+  100% {
+    background-color: #40c463;
+  }
+}
+
+@keyframes darkLevels {
+  0% {
+    background-color: #212936;
+  }
+  33% {
+    background-color: #0f452b;
+  }
+  66% {
+    background-color: #39d353;
+  }
+  100% {
+    background-color: #006d32;
+  }
+}
+
+.squares {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 1rem;
-  @apply w-full lg:w-4/12;
+  grid-gap: 5px;
+  grid-template-columns: repeat(auto-fit, minmax(15px, 1fr));
+  grid-auto-rows: minmax(15px, 1fr);
+  grid-auto-columns: 15px;
+  list-style: none;
+  position: relative;
 }
 
-@media (min-width: 640px) {
-  .social-grid {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+@media only screen and (min-width: 1024px) {
+  .squares {
+    height: 330px;
+    overflow: hidden;
   }
 }
 
-@media (min-width: 1024px) {
-  .social-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-.social-grid > a {
-  @apply text-center rounded-lg bg-gray-700 cursor-pointer transform transition ease-in-out duration-300 hover:-translate-y-2 hover:shadow-xl;
-  padding: 1rem;
-  display: grid;
-  place-items: center;
-}
-
-.social-grid > a::before {
+.squares:after {
   content: '';
-  display: block;
-  padding-bottom: 100%;
-  grid-area: 1 / 1 / 2 / 2;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  height: 15px;
 }
 
-.social-grid > a div {
-  width: 100%;
-  grid-area: 1 / 1 / 2 / 2;
+.squares li {
+  animation-name: levels;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+  border-radius: 2px;
+}
+
+.dark .squares li {
+  animation-name: darkLevels;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+  border-radius: 2px;
+}
+
+.squares li:nth-child(odd) {
+  animation-duration: 3s;
+  animation-direction: alternate-reverse;
 }

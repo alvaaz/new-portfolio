@@ -1,6 +1,6 @@
-import * as React from 'react';
+import * as React from 'react'
 
-export function Youtube(props: any) {
+export default function Youtube(props: any) {
   return (
     <svg
       width={48}
@@ -17,5 +17,5 @@ export function Youtube(props: any) {
         fill="#fff"
       />
     </svg>
-  );
+  )
 }

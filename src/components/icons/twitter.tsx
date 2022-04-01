@@ -1,6 +1,6 @@
-import * as React from 'react';
+import * as React from 'react'
 
-export function Twitter(props: any) {
+export default function Twitter(props: any) {
   return (
     <svg
       width={48}
@@ -17,5 +17,5 @@ export function Twitter(props: any) {
         fill="#fff"
       />
     </svg>
-  );
+  )
 }

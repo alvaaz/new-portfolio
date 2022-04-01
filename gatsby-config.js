@@ -12,10 +12,11 @@ module.exports = {
     description: `Diseñador de productos digitales viviendo en Viña del Mar, Chile. Con experiencia en el desarrollo de Sistemas de Diseño. Especializándome en desarrollo front-end.`,
     siteUrl: `https://goede.cl`,
     social: {
-      twitter: `alvaaz`,
+      twitter: `https://twitter.com/alvaaz`,
       github: `https://github.com/alvaaz`,
       youtube: `https://www.youtube.com/channel/UCvMg7whAhSHpoL04E96fe5Q`,
-      email: `alvaro@goede.cl`
+      email: `mailto:alvaro@goede.cl`,
+      linkedin: `https://www.linkedin.com/in/alvarogoede/`
     },
     defaultImage: "images/bg.jpeg",
   },

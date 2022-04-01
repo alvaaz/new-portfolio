@@ -1,6 +1,6 @@
 import React from 'react'
 
-export function Sun({ props }: { props?: { className?: string } }) {
+export default function Sun(props: any) {
   return (
     <svg
       width="24"

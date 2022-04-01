@@ -1,3 +1,4 @@
 export * from './Button';
 export * from './SEO';
 export * from './ListProjects';
+export * from './ListRepositories';
