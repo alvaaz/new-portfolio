@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-type SizeType = 'small' | 'middle' | 'large' | undefined
+export type SizeType = 'small' | 'middle' | 'large' | undefined
 
 const small = {
   width: 20,
@@ -14,10 +14,10 @@ const middle = {
   viewBox: '0 0 24 25',
 }
 
-export function Chevron(props: {
-  size: SizeType
-  color: string
-  className: string
+export default function Chevron(props: {
+  size?: SizeType
+  color?: string
+  className?: string
 }) {
   const { color, size, className } = props
   return (

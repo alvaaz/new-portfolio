@@ -12,16 +12,21 @@ const Blog = ({ data }: { data: { projects: { nodes: ProjectProps } } }) => {
     return (
       <Link
         to={`/portfolio${project.fields.slug}`}
-        className="cursor-pointer transform transition ease-in-out duration-300 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-2xl p-10 text-xl sm:text-2xl col-span-full sm:col-span-4"
+        className="cursor-pointer transform transition ease-in-out duration-300 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-2xl p-5 sm:p-6 md:p-7 lg:p-8 xl:p-10 text-xl sm:text-2xl col-span-full md:col-span-12 lg:col-span-4"
         key={project.fields.slug}
       >
-        <article className="" key={project.id}>
-          <h6 className="text-yellow-600 dark:text-yellow-600 mb-4 font-medium">
-            {project.frontmatter.title}
-          </h6>
-          <p className="dark:text-white">{project.frontmatter.excerpt}</p>
+        <article
+          className="flex flex-col sm:flex-row lg:flex-col sm:items-center lg:items-start"
+          key={project.id}
+        >
+          <div className="basis-auto sm:basis-1/2 lg:basis-auto">
+            <h6 className="text-gray-900 dark:text-white mb-4 font-medium">
+              {project.frontmatter.title}
+            </h6>
+            <p className="dark:text-gray-400">{project.frontmatter.excerpt}</p>
+          </div>
           <GatsbyImage
-            className="sm:w-1/2 lg:w-auto"
+            className="basis-auto sm:basis-1/2 lg:basis-auto"
             image={image as IGatsbyImageData}
             alt={title}
           />
@@ -34,12 +39,12 @@ const Blog = ({ data }: { data: { projects: { nodes: ProjectProps } } }) => {
     <>
       <SEO title="All projects" />
       <div className="mb-16">
-        <h4 className="text-3xl sm:text-4xl font-medium mb-12 text-yellow-600 dark:text-yellow-600">
+        <h4 className="text-3xl sm:text-4xl font-semibold mb-8 text-gray-800 dark:text-white">
           Portfolio
         </h4>
-        <p className="text-xl sm:text-3x font-semibold dark:text-white sm:w-8/12">
-          Aquí encontrarás algunos de los proyectos de diseño en los que he
-          trabajado. Si buscas proyectos de código, puedes visitar mi Github.
+        <p className="text-xl sm:text-3xl font-semibold text-gray-500 dark:text-gray-400 sm:w-8/12">
+          Here you can find some of my works. If you want to see more, you can
+          go to my <a href="https://goede.cl/github">Github</a>
         </p>
       </div>
       <section className="grid grid-cols-8 sm:grid-cols-12 gap-8 items-start">

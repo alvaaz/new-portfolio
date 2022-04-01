@@ -2,21 +2,21 @@
 title: Montt
 date: '2020-07-27T07:26:03.284Z'
 color: 'bg-blue-700'
-excerpt: 'CaseTracking para buffet de abogados Montt & Cia.'
-content1: 'El seguimiento de causas mineras es un proceso legal que contempla muchas etapas. El cliente requería una plataforma que le permitiera dar seguimiento y documentar el proceso, con la finalidad de focalizar sus recursos de mejor manera.'
+excerpt: 'CaseTracking for law firm Montt & Cia.'
+content1: 'The tracking of mining cases is a legal process that involves many stages. The client required a platform that would allow them to track and document the process, to better focus their resources.'
 featuredImage: featuredImage.png
 role: Product Designer
-contributors: ['Daniel', 'Jose']
+contributors: ['Daniel Montero', 'Johannes Rothkegel']
 year: 2021
 image1: image1.png
 image2: image2.webp
-title1: 'Desafío'
-content2: 'Crear una plataforma de seguimiento de causas mineras. En la etapa temprana, el gran problema fue la brecha que tenía el equipo de desarrollo del conocimiento técnico y legal que todo el proceso contemplaba.'
-title2: 'Proceso'
-content3: 'Se realizaron flujos de usuario en la etapa de arquitectura de la información. Para la estructura y la disponibilidad del contenido se trabajaron algunos wireframes. Finalmente cree un sistema de diseño que permitió manejar la consistencia visual entre los distintos mockups.'
+title1: 'Challenge'
+content2: 'Create a mining case tracking platform. In the early stage, the big problem was the gap that the development team had in the technical and legal knowledge that the whole process contemplated.'
+title2: 'Progress'
+content3: 'User flows were created in the information architecture stage. For the structure and availability of the content, some wireframes were worked on. Finally, I created a design system that allowed me to manage the visual consistency between the different mockups.'
 image3: image3.webp
-title3: 'Resultados'
-content4: 'Este proyecto se sigue desarrollando actualmente. Se levantó un sistema de diseño que permite escalar este proyecto según los nuevos requerimiento del cliente y tener la flexibilidad que requiere un producto como este.'
+title3: 'Results'
+content4: 'This project is currently under development. A design system was developed that allows scaling this project according to the new requirements of the client and having the flexibility required for a product like this.'
 image4: image4.webp
 image5: image5.png
 ---

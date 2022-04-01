@@ -1,6 +1,6 @@
-import * as React from 'react';
+import * as React from 'react'
 
-export function Github(props: any) {
+export default function Github(props: any) {
   return (
     <svg
       width={48}
@@ -17,5 +17,5 @@ export function Github(props: any) {
         fill="#fff"
       />
     </svg>
-  );
+  )
 }

@@ -16,7 +16,7 @@ const Layout: FC = ({ children }) => {
             className="mr-0 sm:mr-8 px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800 cursor-pointer rounded-lg transition ease-in-out duration-300 dark:text-white"
             to="/portfolio"
           >
-            Portafolio
+            Portfolio
           </Link>
           <ThemeControl />
         </nav>

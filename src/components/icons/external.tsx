@@ -1,6 +1,6 @@
-import * as React from 'react';
+import * as React from 'react'
 
-export function External(props: any) {
+export default function External(props: any) {
   return (
     <svg
       width={24}
@@ -32,5 +32,5 @@ export function External(props: any) {
         strokeLinejoin="round"
       />
     </svg>
-  );
+  )
 }

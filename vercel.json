@@ -12,9 +12,13 @@
       "source": "/twitter",
       "destination": "https://www.twitter.com/alvaaz/"
     },
-     {
+    {
       "source": "/linkedin",
       "destination": "https://www.linkedin.com/in/alvarogoede/"
+    },
+    {
+      "source": "/github",
+      "destination": "https://github.com/alvaaz"
     }
   ]
 }

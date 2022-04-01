@@ -3,21 +3,21 @@ title: Jumpitt
 link: 'https://www.jumpitt.com'
 date: '2020-07-27T07:26:03.284Z'
 color: 'bg-black'
-excerpt: 'Desarrollo de sitio web en NextJs y GraphQL'
-content1: 'Re-hacer el sitio web de Jumpitt para mejorar performance y agregarle la funcionalidad de ser administrado por cualquier persona del equipo.'
+excerpt: 'Website development in NextJs and GraphQL'
+content1: "Re-make Jumpitt's website to improve performance and add the functionality to be managed by anyone on the team."
 featuredImage: featuredImage.png
 role: Fullstack Developer
 contributors: []
 year: 2019
 image1: image1.png
 image2: image2.webp
-title1: 'Problema'
-content2: 'El sitio web de Jumpitt carecía de un panel de administración que le permitiera a una persona sin conocimiento en código generar modificaciones de manera rápida. Tomé este problema como un desafío personal para aprender a crear una aplicación desde cero con React y NodeJS.'
-title2: 'Proceso'
-content3: 'El primer paso para la creación del sitio fue manejar toda la interfaz mediante NextJS, que permitiese manejar las rutas, SSR o contenido estático fácilmente. Para lo que son los componentes y el manejo de estilo, decidí usar Styled Components y por último, con la finalidad de conocer GraphQL, utilicé GraphCMS — un headless CMS en la nube —, que me ofrecía la posibilidad de levantar rápidamente una API. Al pasar el tiempo, conocí KeystoneJS, y descubrí que completaba todos los requerimientos que GraphCMS me ofrecía, e incluso agregaba algunos features como manejar tu propia DB y también tu propio servicio de imágenes, es allí donde conocí MongoAtlas y Cloudinary.'
+title1: 'Problem'
+content2: "Jumpitt's website lacked an admin panel that would allow a person with no coding knowledge to quickly generate modifications. I took this problem as a personal challenge to learn how to create an application from scratch with React and NodeJS."
+title2: 'Progress'
+content3: "The first step for the creation of the site was to manage the whole interface using NextJS, which allowed to manage routes, SSR, or static content easily. For the components and style management, I decided to use Styled Components, and finally, to get to know GraphQL, I used GraphCMS - a headless CMS in the cloud -, which offered me the possibility to quickly set up an API. As time went by, I got to know KeystoneJS, and I discovered that it completed all the requirements that GraphCMS offered me, and even added some features like managing your DB and also your image service, that's where I met MongoAtlas and Cloudinary."
 image3: image3.webp
-title3: 'Resultados'
-content4: 'Gracias a este desafío aprendí herramientas como GraphQL, el servicio de MongoAtlas para el manejo gratuito de bases de datos Mongo, a implementar Lazy Loading a través de la API Intersection Observer y la creación de custom hooks. Utilicé Heroku para deployar algunos casos de prueba, pero finalmente todo quedó funcionando en AWS, junto con la DB del propio servicio y la nube de Cloudinary para el manejo de imágenes. Este sitio web es el la actual carta de presentación de la agencia de desarrollo Jumpitt y significó una mejora sustancial en la actualización de sus contenidos.'
+title3: 'Results'
+content4: "Thanks to this challenge I learned tools like GraphQL, the MongoAtlas service for free Mongo database management, how to implement Lazy Loading through the Intersection Observer API, and the creation of custom hooks. I used Heroku to deploy some test cases, but finally, everything was running on AWS, along with the service's DB and Cloudinary's cloud for image management. This website is the Jumpitt development agency's current business card and it meant a substantial improvement in the updating of its contents."
 image4: image5.jpeg
 image5: image4.png
 ---

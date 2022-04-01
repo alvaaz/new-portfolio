@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { External } from '../components/icons'
+import Icon from '../components/icons'
 import { graphql } from 'gatsby'
 import { SEO } from '../components'
 import { getImage, GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image'
@@ -30,7 +30,7 @@ const PortfolioProjectTemplate = ({ data }: { data: SingleProjectProps }) => {
               className="text-xl sm:text-2xl font-medium text-blue-600 dark:text-blue-500 px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800 cursor-pointer rounded-lg transition ease-in-out duration-300 flex items-center"
             >
               Visitar sitio
-              <External className="ml-2" />
+              <Icon name="external" className="ml-2" />
             </a>
           )}
         </div>
@@ -46,15 +46,19 @@ const PortfolioProjectTemplate = ({ data }: { data: SingleProjectProps }) => {
         <div className="col-span-full lg:col-start-9 lg:col-end-12 font-semibold">
           <p className="text-xl mb-2 text-black dark:text-white">Rol</p>
           {/* prettier-ignore */}
-          <p className="text-xl mb-0 mt-0 text-gray-500 dark:text-gray-400 mb-4">{project.role}</p>
-          <p className="text-xl mb-2 text-black dark:text-white">
-            Colaboradores
-          </p>
-          <ul className="text-xl text-gray-500 dark:text-gray-400 mb-4">
-            {project.contributors.map((contributor, index) => (
-              <li key={index}>— {contributor}</li>
-            ))}
-          </ul>
+          <p className="text-xl mt-0 text-gray-500 dark:text-gray-400 mb-4">{project.role}</p>
+          {project.contributors.length > 0 && (
+            <>
+              <p className="text-xl mb-2 text-black dark:text-white">
+                Contributors
+              </p>
+              <ul className="text-xl text-gray-500 dark:text-gray-400 mb-4">
+                {project.contributors.map((contributor, index) => (
+                  <li key={index}>— {contributor}</li>
+                ))}
+              </ul>
+            </>
+          )}
           <p className="text-xl mb-2 text-black dark:text-white">Año</p>
           {/* prettier-ignore */}
           <p className="text-xl text-gray-500 dark:text-gray-400 mt-0">{project.year}</p>
