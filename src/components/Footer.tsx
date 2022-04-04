@@ -26,7 +26,7 @@ function Footer() {
   return (
     <footer className="bg-gray-800 py-16">
       <div className="container mx-auto flex lg:items-center flex-col lg:flex-row px-4 sm:px-8 justify-start">
-        <div className="grow mb-8 lg:mb-0">
+        <div className="grow mb-8 lg:mb-0 basis-auto lg:basis-1/4">
           <h2 className="font-semibold text-2xl lg:text-3xl xl:text-4xl text-white mb-4">
             Let's keep in touch
           </h2>

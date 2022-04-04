@@ -27,6 +27,7 @@ export type SingleProjectProps = {
       image3: IGatsbyImageData
       title3: string
       content3: string
+      content4: string
       image4: IGatsbyImageData
       image5: IGatsbyImageData
     }

@@ -44,7 +44,7 @@ const PortfolioProjectTemplate = ({ data }: { data: SingleProjectProps }) => {
         </p>
 
         <div className="col-span-full lg:col-start-9 lg:col-end-12 font-semibold">
-          <p className="text-xl mb-2 text-black dark:text-white">Rol</p>
+          <p className="text-xl mb-2 text-black dark:text-white">Role</p>
           {/* prettier-ignore */}
           <p className="text-xl mt-0 text-gray-500 dark:text-gray-400 mb-4">{project.role}</p>
           {project.contributors.length > 0 && (
@@ -59,7 +59,7 @@ const PortfolioProjectTemplate = ({ data }: { data: SingleProjectProps }) => {
               </ul>
             </>
           )}
-          <p className="text-xl mb-2 text-black dark:text-white">Año</p>
+          <p className="text-xl mb-2 text-black dark:text-white">Year</p>
           {/* prettier-ignore */}
           <p className="text-xl text-gray-500 dark:text-gray-400 mt-0">{project.year}</p>
         </div>
@@ -98,6 +98,16 @@ const PortfolioProjectTemplate = ({ data }: { data: SingleProjectProps }) => {
           image={image5 as IGatsbyImageData}
           alt=""
         />
+        {project.content4 && project.title3 && (
+          <>
+            <h6 className="col-span-full lg:col-start-2 lg:col-end-9 sm:text-lg md:text-xl lg:text-2xl font-semibold mb-8 dark:text-white">
+              {project.title3}
+            </h6>
+            <p className="col-span-full lg:col-start-2 lg:col-end-9 mb-12 text-2xl lg:text-3xl text-gray-500 dark:text-gray-400 font-semibold leading-snug">
+              {project.content4}
+            </p>
+          </>
+        )}
       </main>
     </>
   )
