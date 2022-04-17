@@ -83,7 +83,7 @@ export default function index({ data }: { data: ProjectsProps }) {
             <p className="mb-12 sm:mb-16 leading-normal text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl sm:leading-snug md:leading-normal lg:leading-relaxed xl:leading-relaxed dark:text-white">
               <span className="font-semibold">Digital product designer,</span>
               <br />
-              <span> bridging design and code.</span>
+              <span> happily located at the intersection of design and code.</span>
             </p>
             <div className="flex flex-wrap items-start">
               <a
