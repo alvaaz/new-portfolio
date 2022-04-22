@@ -83,7 +83,10 @@ export default function index({ data }: { data: ProjectsProps }) {
             <p className="mb-12 sm:mb-16 leading-normal text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl sm:leading-snug md:leading-normal lg:leading-relaxed xl:leading-relaxed dark:text-white">
               <span className="font-semibold">Digital product designer,</span>
               <br />
-              <span> happily located at the intersection of design and code.</span>
+              <span>
+                {' '}
+                happily located at the intersection of design and code.
+              </span>
             </p>
             <div className="flex flex-wrap items-start">
               <a
@@ -91,7 +94,7 @@ export default function index({ data }: { data: ProjectsProps }) {
                 target="_blank"
                 href="/resume.pdf"
               >
-                Download resumé
+                Download resume
               </a>
               <a
                 className="px-6 py-3 sm:py-4 border sm:border-2 border-black dark:border-white dark:hover:bg-gray-800 dark:text-white rounded-lg text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl hover:bg-gray-100 dark:hover:bg-gray-900 transition ease-in-out duration-300"
