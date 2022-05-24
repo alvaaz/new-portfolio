@@ -19,6 +19,10 @@
     {
       "source": "/github",
       "destination": "https://github.com/alvaaz"
+    },
+    {
+      "source": "/agenda",
+      "destination": "https://calendar.google.com/calendar/appointments/schedules/AcZssZ1NQwpGnQobfoYzPbjcaSZjg6OTNl2wnhqjlEFQ8FanBUBbCuZaelJQo9SCcpwn4spC68jzc4jO"
     }
   ]
 }
