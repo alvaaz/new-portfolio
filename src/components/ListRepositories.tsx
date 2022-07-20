@@ -6,9 +6,9 @@ export function ListRepositories() {
   const repositories = [
     {
       id: 0,
-      name: 'inventory',
-      url: 'https://github.com/alvaaz/inventory',
-      description: ' Inventory app using GraphQL and React ',
+      name: 'google-meet-clone',
+      url: 'https://github.com/alvaaz/google-meet-clone',
+      description: ' This is a clone of Google Meet using Remix, Prisma and Twilio',
       language: 'typescript',
     },
     {
