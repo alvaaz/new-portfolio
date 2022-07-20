@@ -1,6 +1,6 @@
 # Mi portafolio de trabajos, videos y contacto.
 
-Este sitio está desarrollado utilizando las [https://www.gatsbyjs.com/docs/reference/config-files/gatsby-node/](Gatsby Node APIs) para la creación de páginas de proyectos y articulos del blog (próximamente).
+Este sitio está desarrollado utilizando las [Gatsby Node APIs](https://www.gatsbyjs.com/docs/reference/config-files/gatsby-node/) para la creación de páginas de proyectos y articulos del blog (próximamente).
 
 ## Stack
 
