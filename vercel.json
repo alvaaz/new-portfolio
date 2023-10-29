@@ -31,6 +31,14 @@
     {
       "source": "/usm-slides",
       "destination": "/slides-clase11.pdf"
+    },
+    {
+      "source": "/getmeurl",
+      "destination": "https://getmeurl.vercel.app"
+    },
+    {
+      "source": "/80s",
+      "destination": "https://open.spotify.com/playlist/5Xvwl5u4Ffae9RtxJUxs7R?si=bd6bb7f0646147eb"
     }
   ]
 }
