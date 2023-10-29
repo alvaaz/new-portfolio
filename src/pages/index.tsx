@@ -182,21 +182,6 @@ export default function index({ data }: { data: ProjectsProps }) {
             See all videos
           </a>
         </section>
-        <section className="mb-16 sm:mb-40">
-          <div className="flex justify-between items-center mb-8 lg:mb-12">
-            <h4 className="text-2xl sm:text-3xl md:text-4xl font-medium dark:text-white mb-0">
-              Talks
-            </h4>
-          </div>
-          <div className="flex flex-col lg:flex-row lg:space-x-8">
-            <a
-              className="mb-8 lg:mb-0 lg:w-4/12 cursor-pointer transform bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 transition ease-in-out duration-300 rounded-2xl p-4"
-              href="#"
-            >
-              <p>Hola</p>
-            </a>
-          </div>
-        </section>
       </main>
     </>
   )
