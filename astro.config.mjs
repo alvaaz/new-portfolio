@@ -1,7 +1,6 @@
 import { defineConfig } from 'astro/config';
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
-import vercel from '@astrojs/vercel/edge';
 
 import tailwind from "@astrojs/tailwind";
 
@@ -11,8 +10,5 @@ export default defineConfig({
   integrations: [mdx(), sitemap(), tailwind()],
   experimental: {
     assets: true
-  },
-  adapter: vercel({
-    imageService: true,
-  })
+  }
 });
