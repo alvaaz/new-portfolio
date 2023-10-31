@@ -1,0 +1,61 @@
+---
+import Work from "../components/Work.astro";
+import Projects from "../components/Projects.astro";
+import Videos from "../components/Videos.astro";
+import Main from "../layouts/Main.astro";
+import { Image } from "astro:assets";
+import me from "../assets/alvaro.png";
+---
+
+<Main
+  title="Álvaro — Product Designer"
+  description="Digital product designer, happily located at the intersection of design and code."
+>
+  <div class="hero mb-32 sm:mb-48">
+    <div
+      class="flex justify-between flex-col items-start lg:flex-row lg:items-center"
+    >
+      <div>
+        <p
+          class="mb-12 sm:mb-16 leading-normal text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl sm:leading-snug md:leading-normal lg:leading-relaxed xl:leading-relaxed dark:text-white"
+        >
+          <span class="font-semibold">Digital product designer,</span>
+          <br />
+          <span>
+            {" "}
+             happily located at the intersection of design and code.
+          </span>
+        </p>
+        <div class="flex flex-wrap items-start">
+          <a
+            class="px-6 py-3 sm:py-4 border sm:border-2 border-transparent bg-black dark:bg-white dark:hover:bg-slate-200 text-white dark:text-black rounded-lg mr-6 text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl hover:bg-gray-800 transition ease-in-out duration-300 mb-4 sm:mb-0"
+            target="_blank"
+            href="/resume.pdf"
+          >
+            Download resume
+          </a>
+          <a
+            class="px-6 py-3 sm:py-4 border sm:border-2 border-black dark:border-white dark:text-white rounded-lg text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl hover:bg-gray-100 dark:hover:bg-gray-900 transition ease-in-out duration-300"
+            href="https://www.youtube.com/channel/UCvMg7whAhSHpoL04E96fe5Q"
+            target="_blank"
+          >
+            Youtube Channel
+          </a>
+        </div>
+      </div>
+      <Image
+        class="order-first lg:order-none mb-8 lg:mb-0 w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-80 lg:h-80 xl:w-auto xl:h-auto"
+        src={me}
+        alt="A bird."
+        width="407"
+        height="406"
+        alt="Álvaro Goede"
+      />
+    </div>
+  </div>
+  <main>
+    <Work />
+    <Projects />
+    <Videos />
+  </main>
+</Main>

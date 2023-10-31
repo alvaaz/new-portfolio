@@ -1,0 +1,120 @@
+---
+import { getCollection } from "astro:content";
+import Icons from "../../components/Icons/index.astro";
+import Main from "../../layouts/Main.astro";
+
+export async function getStaticPaths() {
+  const projects = await getCollection("projects");
+  return projects.map((project) => ({
+    params: { slug: project.slug },
+    props: project,
+  }));
+}
+
+const project = Astro.props;
+---
+
+<Main title={project.data.title} description={project.data.excerpt}>
+  <header class="grid grid-cols-12 gap-x-8 mb-16 lg:mb-32">
+    <div
+      class="flex justify-between items-center col-span-full lg:col-start-2 lg:col-end-12 mb-12"
+    >
+      <h2
+        class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold dark:text-white mb-0"
+      >
+        {project.data.title}
+      </h2>
+      {
+        project.data.link && (
+          <a
+            href={project.data.link}
+            target="_blank"
+            class="text-xl sm:text-2xl font-medium text-blue-600 dark:text-blue-500 px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800 cursor-pointer rounded-lg transition ease-in-out duration-300 flex items-center"
+          >
+            Visit site
+            <Icons name="external" class="ml-2" />
+          </a>
+        )
+      }
+    </div>
+    <div class="col-span-full lg:col-start-2 lg:col-end-12 mb-12">
+      <img src={`${project.slug}/${project.data.image1}`} alt="" />
+    </div>
+    <p
+      class="col-span-full lg:col-start-2 lg:col-end-9 mb-12 lg:mb-0 mt-0 text-gray-500 dark:text-gray-400 text-2xl lg:text-3xl font-semibold leading-snug"
+    >
+      {project.data.content1}
+    </p>
+
+    <div class="col-span-full lg:col-start-9 lg:col-end-12 font-semibold">
+      <p class="text-xl mb-2 text-black dark:text-white">Role</p>
+      <p class="text-xl mt-0 text-gray-500 dark:text-gray-400 mb-4">
+        {project.data.role}
+      </p>
+      {
+        project.data.contributors.length > 0 && (
+          <>
+            <p class="text-xl mb-2 text-black dark:text-white">Contributors</p>
+            <ul class="text-xl text-gray-500 dark:text-gray-400 mb-4">
+              {project.data.contributors.map((contributor) => (
+                <li>— {contributor}</li>
+              ))}
+            </ul>
+          </>
+        )
+      }
+      <p class="text-xl mb-2 text-black dark:text-white">Year</p>
+      <p class="text-xl text-gray-500 dark:text-gray-400 mt-0">
+        {project.data.year}
+      </p>
+    </div>
+  </header>
+  <main class="grid grid-cols-12 gap-x-8">
+    <div class="col-span-full lg:col-start-2 lg:col-end-7 mb-20">
+      <img src={`${project.slug}/${project.data.image2}`} alt="" />
+    </div>
+
+    <div class="col-span-full lg:col-start-7 lg:col-end-12 mb-20">
+      <img src={`${project.slug}/${project.data.image3}`} alt="" />
+    </div>
+
+    <h6
+      class="col-span-full lg:col-start-2 lg:col-end-9 sm:text-lg md:text-xl lg:text-2xl font-semibold mb-8 dark:text-white"
+    >
+      {project.data.title1}
+    </h6>
+    <p
+      class="col-span-full lg:col-start-2 lg:col-end-9 mb-12 text-2xl lg:text-3xl text-gray-500 dark:text-gray-400 font-semibold leading-snug"
+    >
+      {project.data.content2}
+    </p>
+    <div class="col-span-full lg:col-start-2 lg:col-end-12 mb-24">
+      <img src={`${project.slug}/${project.data.image4}`} alt="" />
+    </div>
+    <h6
+      class="col-span-full lg:col-start-2 lg:col-end-9 sm:text-lg md:text-xl lg:text-2xl font-semibold mb-8 dark:text-white"
+    >
+      {project.data.title2}
+    </h6>
+    <p
+      class="col-span-full lg:col-start-2 lg:col-end-9 text-2xl lg:text-3xl text-gray-500 dark:text-gray-400 font-semibold mb-12 leading-snug"
+    >
+      {project.data.content3}
+    </p>
+    <div class="col-span-full lg:col-start-2 lg:col-end-12 mb-24">
+      <img src={`${project.slug}/${project.data.image5}`} alt="" />
+    </div>
+    {
+      project.data.content4 && project.data.title3 && (
+        <>
+          <h6 class="col-span-full lg:col-start-2 lg:col-end-9 sm:text-lg md:text-xl lg:text-2xl font-semibold mb-8 dark:text-white">
+            {project.data.title3}
+          </h6>
+          <p class="col-span-full lg:col-start-2 lg:col-end-9 mb-12 text-2xl lg:text-3xl text-gray-500 dark:text-gray-400 font-semibold leading-snug">
+            {project.data.content4}
+          </p>
+        </>
+      )
+    }
+  </main>
+</Main>

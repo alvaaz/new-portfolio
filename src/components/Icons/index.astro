@@ -1,0 +1,52 @@
+---
+import Chevron from "./Chevron.astro";
+import External from "./External.astro";
+import Github from "./Github.astro";
+import Linkedin from "./Linkedin.astro";
+import Email from "./Email.astro";
+import Youtube from "./Youtube.astro";
+import Twitter from "./Twitter.astro";
+import CSS from "./CSS.astro";
+import Typescript from "./Typescript.astro";
+import Repository from "./Repository.astro";
+import Sun from "./Sun.astro";
+import Moon from "./Moon.astro";
+
+const { name } = Astro.props;
+---
+
+<>
+  {
+    (() => {
+      switch (name) {
+        case "chevron":
+          return <Chevron {...Astro.props} />;
+        case "external":
+          return <External {...Astro.props} />;
+        case "twitter":
+          return <Twitter {...Astro.props} />;
+        case "linkedin":
+          return <Linkedin {...Astro.props} />;
+        case "email":
+          return <Email {...Astro.props} />;
+        case "youtube":
+          return <Youtube {...Astro.props} />;
+        case "github":
+          return <Github {...Astro.props} />;
+        case "css":
+          return <CSS {...Astro.props} />;
+        case "typescript":
+          return <Typescript {...Astro.props} />;
+        case "repository":
+          return <Repository {...Astro.props} />;
+        case "sun":
+          return <Sun {...Astro.props} />;
+        case "moon":
+          return <Moon {...Astro.props} />;
+
+        default:
+          return <div>Icon not found</div>;
+      }
+    })()
+  }
+</>

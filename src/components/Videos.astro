@@ -1,0 +1,71 @@
+---
+import Icons from "../components/Icons/index.astro";
+import { SOCIAL_LINKS } from "../consts";
+import FormattedDate from "./FormattedDate.astro";
+const res = await fetch(
+  `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=PLUweiC3IeIEoaer4XlQAl8alwcGCqdHce&maxResults=4&key=${
+    import.meta.env.YOUTUBE_KEY
+  }`
+);
+const data = await res.json();
+
+type Video = {
+  snippet: {
+    title: string;
+    thumbnails: {
+      standard: {
+        url: string;
+      };
+    };
+    resourceId: {
+      videoId: string;
+    };
+    publishedAt: string;
+  };
+};
+---
+
+<section class="mb-16 sm:mb-40">
+  <div class="flex justify-between items-center mb-8 lg:mb-12">
+    <h4
+      class="text-2xl sm:text-3xl md:text-4xl font-medium dark:text-white mb-0"
+    >
+      Latest videos
+    </h4>
+    <a
+      href="https://www.youtube.com/channel/UCvMg7whAhSHpoL04E96fe5Q"
+      target="_blank"
+      class="hidden sm:flex text-lg lg:text-xl xl:text-2xl font-medium text-blue-600 dark:text-blue-500 px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800 cursor-pointer rounded-lg transition ease-in-out duration-300 items-center"
+    >
+      See all
+      <Icons name="external" class="ml-1 w-5 h-5 xl:w-6 xl:h-6" />
+    </a>
+  </div>
+  <div class="flex flex-col lg:flex-row lg:space-x-8">
+    {
+      data.items.map((video: Video) => (
+        <a
+          class="mb-8 lg:mb-0 lg:w-4/12 cursor-pointer transform bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 transition ease-in-out duration-300 rounded-2xl p-4"
+          href={`https://www.youtube.com/watch?v=${video.snippet.resourceId.videoId}`}
+        >
+          <img
+            class="rounded-lg mb-4 w-full z-0"
+            src={video.snippet.thumbnails.standard.url}
+            alt={video.snippet.title}
+          />
+          <h6 class="font-semibold text-lg sm:text-xl mb-4 dark:text-white">
+            {video.snippet.title}
+          </h6>
+          <FormattedDate date={video.snippet.publishedAt} />
+        </a>
+      ))
+    }
+  </div>
+  <a
+    href={SOCIAL_LINKS.find((el) => el.name === "youtube")?.url}
+    target="_blank"
+    class="block sm:hidden text-lg font-medium text-blue-600 dark:text-blue-500 px-4 py-2 bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 cursor-pointer rounded-lg transition ease-in-out duration-300 text-center"
+  >
+    See all videos
+  </a>
+</section>

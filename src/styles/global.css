@@ -1,0 +1,124 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+@layer base {
+  h1 {
+    @apply dark:text-white text-5xl mb-4;
+  }
+
+  h2 {
+    @apply dark:text-white text-4xl mb-4;
+  }
+
+  h3 {
+    @apply dark:text-white text-3xl mb-4;
+  }
+
+  h4 {
+    @apply dark:text-white text-2xl mb-4;
+  }
+
+  h5 {
+    @apply dark:text-white text-xl mb-4;
+  }
+
+  h6 {
+    @apply dark:text-white;
+  }
+
+  p {
+    @apply text-lg mb-8;
+  }
+}
+
+@keyframes levels {
+  0% {
+    background-color: #ebedf0;
+  }
+
+  33% {
+    background-color: #216e39;
+  }
+
+  66% {
+    background-color: #9be9a8;
+  }
+
+  100% {
+    background-color: #40c463;
+  }
+}
+
+@keyframes darkLevels {
+  0% {
+    background-color: #212936;
+  }
+
+  33% {
+    background-color: #0f452b;
+  }
+
+  66% {
+    background-color: #39d353;
+  }
+
+  100% {
+    background-color: #006d32;
+  }
+}
+
+.squares {
+  display: grid;
+  grid-gap: 5px;
+  grid-template-columns: repeat(auto-fit, minmax(15px, 1fr));
+  grid-auto-rows: minmax(15px, 1fr);
+  grid-auto-columns: 15px;
+  list-style: none;
+  position: relative;
+}
+
+@media only screen and (min-width: 1024px) {
+  .squares {
+    height: 330px;
+    overflow: hidden;
+  }
+}
+
+.squares:after {
+  content: '';
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  height: 15px;
+}
+
+.squares li {
+  animation-name: levels;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+  border-radius: 2px;
+}
+
+.dark .squares li {
+  animation-name: darkLevels;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: both;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+  border-radius: 2px;
+}
+
+.squares li:nth-child(odd) {
+  animation-duration: 3s;
+  animation-direction: alternate-reverse;
+}

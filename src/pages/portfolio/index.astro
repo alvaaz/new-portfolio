@@ -1,0 +1,51 @@
+---
+import Main from "../../layouts/Main.astro";
+import { getCollection } from "astro:content";
+const projects = await getCollection("projects");
+---
+
+<Main
+  title="Portfolio"
+  description="Here you can find some of my works. If you want to see more, you can go to my Github"
+>
+  <div class="mb-16">
+    <h4
+      class="text-3xl sm:text-4xl font-semibold mb-8 text-gray-800 dark:text-white"
+    >
+      Portfolio
+    </h4>
+    <p
+      class="text-xl sm:text-3xl font-semibold text-gray-500 dark:text-gray-400 sm:w-8/12"
+    >
+      Here you can find some of my works. If you want to see more, you can go to
+      my <a href="https://goede.cl/github">Github</a>
+    </p>
+  </div>
+  <section class="grid grid-cols-8 sm:grid-cols-12 gap-8 items-start">
+    {
+      projects.map((project) => {
+        return (
+          <a
+            href={`/portfolio/${project.slug}`}
+            class="cursor-pointer transform transition ease-in-out duration-300 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-2xl p-5 sm:p-6 md:p-7 lg:p-8 xl:p-10 text-xl sm:text-2xl col-span-full md:col-span-12 lg:col-span-4"
+          >
+            <article class="flex flex-col sm:flex-row lg:flex-col sm:items-center lg:items-start">
+              <div class="basis-auto sm:basis-1/2 lg:basis-auto">
+                <h6 class="text-gray-900 dark:text-white mb-4 font-medium">
+                  {project.data.title}
+                </h6>
+                <p class="dark:text-gray-400">{project.data.excerpt}</p>
+              </div>
+              <div class="basis-auto sm:basis-1/2 lg:basis-auto">
+                <img
+                  src={`portfolio/${project.slug}/featuredImage.png`}
+                  alt={project.data.title}
+                />
+              </div>
+            </article>
+          </a>
+        );
+      })
+    }
+  </section>
+</Main>

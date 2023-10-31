@@ -1,0 +1,17 @@
+---
+import { SITE_TITLE } from "../consts";
+import ThemeControl from "./ThemeControl.astro";
+---
+
+<nav
+  class="flex justify-between mb-8 sm:mb-0 py-8 sm:py-16 text-xl sm:text-2xl items-center"
+>
+  <a class="font-semibold dark:text-white mr-auto" href="/">{SITE_TITLE}</a>
+  <a
+    class="mr-0 sm:mr-8 px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800 cursor-pointer rounded-lg transition ease-in-out duration-300 dark:text-white"
+    href="/portfolio"
+  >
+    Portfolio
+  </a>
+  <ThemeControl />
+</nav>
