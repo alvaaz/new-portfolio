@@ -1,7 +1,7 @@
 import { defineConfig } from 'astro/config';
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
-import vercel from '@astrojs/vercel/edge';
+import vercel from '@astrojs/vercel/serverless';
 
 import tailwind from "@astrojs/tailwind";
 
@@ -10,9 +10,6 @@ export default defineConfig({
   output: 'server',
   site: 'https://www.goede.cl',
   integrations: [mdx(), sitemap(), tailwind()],
-  experimental: {
-    assets: true
-  },
   adapter: vercel({
     imageService: true,
   })
