@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import Icons from "../components/Icons/index.astro";
 
 import { getCollection } from "astro:content";
@@ -44,10 +45,12 @@ const projects = (await getCollection("projects")).slice(0, 3);
                 </p>
               </div>
               <div class="basis-auto sm:basis-1/2 lg:basis-auto">
-                <img
+                <Image
                   class="object-cover"
                   src={`portfolio/${project.slug}/featuredImage.png`}
                   alt={project.data.title}
+                  width={542}
+                  height={386}
                 />
               </div>
             </article>
