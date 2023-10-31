@@ -9,7 +9,8 @@ export async function GET(context) {
 		description: SITE_DESCRIPTION,
 		site: context.site,
 		items: projects.map((project) => ({
-			...project.data,
+			title: project.data.title,
+      description: project.data.description,
 			link: `/portfolio/${project.slug}/`,
 		})),
 	});
