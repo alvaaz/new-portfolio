@@ -46,7 +46,7 @@ const projects = (await getCollection("projects")).slice(0, 3);
               <div class="basis-auto sm:basis-1/2 lg:basis-auto">
                 <img
                   class="object-cover"
-                  src={`portfolio/${project.slug}/featuredImage.png`}
+                  src={`/portfolio/${project.slug}/featuredImage.png`}
                   alt={project.data.title}
                 />
               </div>
