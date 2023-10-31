@@ -8,9 +8,5 @@ import tailwind from "@astrojs/tailwind";
 export default defineConfig({
   site: 'https://www.goede.cl',
   integrations: [mdx(), sitemap(), tailwind()],
-  image: {
-    service: {
-      entrypoint: 'astro/assets/services/noop'
-    }
-  }
+
 });
