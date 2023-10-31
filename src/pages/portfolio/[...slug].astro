@@ -38,7 +38,7 @@ const project = Astro.props;
       }
     </div>
     <div class="col-span-full lg:col-start-2 lg:col-end-12 mb-12">
-      <img src={`${project.slug}/${project.data.image1}`} alt="" />
+      <img src={`/portfolio/${project.slug}/${project.data.image1}`} alt="" />
     </div>
     <p
       class="col-span-full lg:col-start-2 lg:col-end-9 mb-12 lg:mb-0 mt-0 text-gray-500 dark:text-gray-400 text-2xl lg:text-3xl font-semibold leading-snug"
@@ -71,11 +71,11 @@ const project = Astro.props;
   </header>
   <main class="grid grid-cols-12 gap-x-8">
     <div class="col-span-full lg:col-start-2 lg:col-end-7 mb-20">
-      <img src={`${project.slug}/${project.data.image2}`} alt="" />
+      <img src={`/portfolio/${project.slug}/${project.data.image2}`} alt="" />
     </div>
 
     <div class="col-span-full lg:col-start-7 lg:col-end-12 mb-20">
-      <img src={`${project.slug}/${project.data.image3}`} alt="" />
+      <img src={`/portfolio/${project.slug}/${project.data.image3}`} alt="" />
     </div>
 
     <h6
@@ -89,7 +89,7 @@ const project = Astro.props;
       {project.data.content2}
     </p>
     <div class="col-span-full lg:col-start-2 lg:col-end-12 mb-24">
-      <img src={`${project.slug}/${project.data.image4}`} alt="" />
+      <img src={`/portfolio/${project.slug}/${project.data.image4}`} alt="" />
     </div>
     <h6
       class="col-span-full lg:col-start-2 lg:col-end-9 sm:text-lg md:text-xl lg:text-2xl font-semibold mb-8 dark:text-white"
@@ -102,7 +102,7 @@ const project = Astro.props;
       {project.data.content3}
     </p>
     <div class="col-span-full lg:col-start-2 lg:col-end-12 mb-24">
-      <img src={`${project.slug}/${project.data.image5}`} alt="" />
+      <img src={`/portfolio/${project.slug}/${project.data.image5}`} alt="" />
     </div>
     {
       project.data.content4 && project.data.title3 && (
