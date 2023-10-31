@@ -53,7 +53,7 @@ import { SOCIAL_LINKS, FEATURED_REPOSITORIES } from "../consts";
     </div>
     <ul class="squares dark:after:bg-gray-900 after:bg-white w-full lg:w-1/6">
       {
-        [...Array(200)].map((_, index) => (
+        [...Array(200)].map(() => (
           <li style={{ animationDelay: `${Math.random()}s` }} />
         ))
       }
