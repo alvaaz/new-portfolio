@@ -39,6 +39,10 @@
     {
       "source": "/80s",
       "destination": "https://open.spotify.com/playlist/5Xvwl5u4Ffae9RtxJUxs7R?si=bd6bb7f0646147eb"
+    },
+    {
+      "source": "/tailwind",
+      "destination": "/tailwind.pdf"
     }
   ]
 }
