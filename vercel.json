@@ -29,6 +29,10 @@
       "destination": "https://github.com/alvaaz/clase-11-react-diseno/tree/main"
     },
     {
+      "source": "/resume",
+      "destination": "/resume.pdf"
+    },
+    {
       "source": "/usm-slides",
       "destination": "/slides-clase11.pdf"
     },
